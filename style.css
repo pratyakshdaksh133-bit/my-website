@@ -652,7 +652,6 @@
   #qrcode-box{
     width: 800px;
     min-width: 900px;
-    background-color: red;
   }
 }
 @media (min-width:900px) {
