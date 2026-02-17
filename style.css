@@ -1,0 +1,785 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+ /*HEADER LAYOUT*/
+/* ===== HEADER ===== */
+/* ===== HEADER ===== */
+.site-header{
+  width:100% !important;
+  background:#111;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  color:white;
+}
+
+.heading{
+  font-size:22px;
+  white-space:nowrap;
+}
+
+/* ===== DESKTOP MENU ===== */
+.menu{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.menu a{
+  color:white;
+  font-size:16px;
+  text-decoration:none;
+}
+
+.menu a:hover{
+  color:red;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  width:30px;
+  cursor:pointer;
+  display:none;
+  transition:0.4s;
+}
+
+.hamburger span{
+  display:block;
+  height:3px;
+  background:white;
+  margin:6px 0;
+  transition:0.4s;
+}
+
+/* ===== X ANIMATION ===== */
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* ===== SIDE MENU ===== */
+#sideMenu{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100vh;
+  background:#222;
+  padding-top:80px;
+  transition:0.4s;
+}
+
+#sideMenu a{
+  display:block;
+  padding:15px 20px;
+  color:white;
+  font-size:18px;
+  text-decoration:none;
+}
+
+#sideMenu a:hover{
+  color:red;
+}
+
+#sideMenu.active{
+  left:0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+
+  .menu{
+    display:none;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+}
+
+  
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:768px){
+  
+    .menu{
+      display:none;
+    }
+  
+    .hamburger{
+      display:block;
+    }
+  
+    .heading{
+      font-size:18px;
+    }
+  }
+    
+
+
+  /*main area with responsive design*/
+
+  /*JPG TO PNG CONVERTERT START*/
+  #tool-wrapper{
+      max-width: 480px;
+      width: 95%;
+      height: 540px;
+      margin: 50px auto;
+      border: none;
+      border-radius: 15px;
+      background:rgb(255, 184, 102);
+  }
+  .container{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+  }
+  #dropArea{
+      width: 90%;
+      height: 250px;
+      overflow: hidden;
+      margin: 10px auto;
+      border: 2px groove black;
+      border-radius: 5px;
+      background: rgba(255, 255, 195, 0.664);
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.596), inset -10px -10px 10px rgba(255, 255, 255, 0.596);
+  }
+ #selectBtn{
+     background: chocolate;
+     border: none;
+     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(210, 105, 30, 0.521);
+ }
+ #downloadBtn{
+    background: green;
+    border:none;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(0, 128, 0, 0.521);
+ }
+ #selectBtn, #downloadBtn{
+     width: 310px;
+     height: 50px;
+     margin: 15px auto;
+     text-align: center;
+     display: block;
+     color: white;
+     border-radius: 10px;
+ }
+
+ #tool-wrapper h2{
+     text-align: center;
+ }
+ 
+ /*JPG TO PNG SIMPLE DESIGN FINISH*/
+ /*JPG TO PNG RESPONSIVE DESIGN START*/
+ @media (min-width:500px) {
+   #hueRange{
+     font-size: 20px;
+   }
+   #tool-wrapper{
+     min-width: 600px;
+     width: 500px;
+     margin:50px auto ;
+   }
+  #buttons-div{
+    min-width: 90%;
+    margin: 20px 0;
+  }
+ }
+ @media (min-width:600px) {
+   #buttons-div #selectBtn, #downloadBtn{
+     width: 80%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   #tool-wrapper{
+    width: 600px;
+    min-width: 700px;
+   }
+ }
+ @media (min-width:700px) {
+   #tool-wrapper{
+    margin: 50px auto;
+    width: 700px;
+    min-width: 800px;
+    height: 550px;
+   }
+   #dropArea{
+     height: 340px;
+   }
+   #selectBtn, #downloadBtn{
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   #buttons-div{
+    margin: 20px 0;
+    width: 80%;
+    gap: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   #hueRange{
+     width: 50%;
+   }
+   .container h2{
+     font-size: 35px;
+   }
+ }
+ @media (min-width:800px) {
+   #tool-wrapper{
+    width: 800px;
+     min-width: 900px;
+   }
+   
+   #buttons-div #selectBtn, #downloadBtn{
+    width: 80%;
+    
+  }
+ 
+ }
+ @media(max-width: 900px){
+  #tool-wrapper{
+    width: 900px;
+  }
+}
+@media(min-width:950px){
+  #tool-wrapper{
+    width: 900px;
+  }
+}
+ /*JPG TO PNG CODE FINISH WITH RESPONSIVE CODE FINISH*/
+
+ /*UNICODE TO KURTI DEV CONVERTER CODE START*/
+#unicode-box{
+  border: none;
+  width: 95%;
+  height: 780px;
+  max-width: 500px;
+  margin: 50px auto;
+  border-radius: 5px;
+  background-color: rgb(55, 170, 55);
+  box-shadow: 0 0 10px green;
+}
+ #unicode-container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+ }
+ #uni-label, #kurti-label{
+   font-size: 30px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ #data{
+  width: 100%;
+ }
+#input, #output{
+   margin: 0 2%;
+   width: 95%;
+   height: 300px;
+   overflow: scroll;
+   resize: none;
+   outline: none;
+ }
+ #input:focus, #output:focus{
+   background: rgb(253, 253, 195);
+ }
+ #unicode-container h2{
+   text-align: center;
+   border: 1px solid rgb(2, 2, 2);
+   display: block;
+ }
+ #convert-to-kurti-btn{
+   width: 340px;
+   height: 50px;
+   color: white;
+   background: red;
+   border-radius: 5px;
+   border: 5px outset red
+ }
+ @media (min-width:500px){
+  #unicode-box{
+    min-width: 600px;
+    width: 90%;
+    height: 800px;
+    margin: 0 auto;
+  }
+ 
+  #data{
+    width: 95%;
+    margin: 0 5%;
+  }
+ }
+ 
+ @media (min-width:600px) {
+  #unicode-box{
+    min-width: 700px;
+    width:95%;
+    margin: 0 auto;
+  }
+
+ }
+ @media (min-width:700px) {
+  #unicode-box{
+    margin: 0 auto;
+    min-width: 800px;
+    width: 700px;
+    height: 500px;
+  }
+  #data{
+    width:99%;
+    margin: 10px 1%;
+  }
+  #data textarea{
+    width: 385px;
+  }
+  #data textarea + textarea{
+    gap: 20px;
+  }
+ .main-data{
+  
+  display: inline-flex;
+  flex-direction: column;
+ }
+ #unicode-container h2{
+  font-size: 30px;
+ }
+ }
+ @media (min-width:800px){
+  #unicode-box{
+    width: 800px;
+    min-width: 900px;
+  }
+  #data{
+    width: 100%;
+    
+  }
+  #data textarea{
+    width: 435px;
+    margin: 0 5px;
+  }
+ }
+ @media (min-width:900px){
+  #unicode-box{
+    width: 900px;
+    min-width: 1000px;
+    height: 600px;
+  }
+  #data{
+    width: 95%;
+  }
+  #data textarea{
+    width: 445px;
+    height: 400px;
+    margin: 0 5%;
+  }
+ }
+
+ /*UNICODE TO KURTIDEV CODE FINISH AND RESPONSIVE DESIGN FINISH*/
+
+ /*HINDI TO ENGLISH CONVERTER AND RESPONSIVE DESIGN START*/
+ .container-DIV{
+   padding: 10px;
+   max-width: 500px;
+   width: 95%;
+   height: 500px;
+   margin: 40px auto;
+   border-radius: 10px;
+   background-color: rgb(255, 122, 122);
+   box-shadow: 0 0 10px rgb(255, 122, 122);
+ }
+ #inputarea, #outputarea{
+  width: 90%;
+  height: 150px;
+  margin: 10px 5%;
+  overflow: scroll;
+  resize: none;
+  outline: none;
+ }
+ #trans{
+  width: 80%;
+  height: 50px;
+  margin: 10px 10%;
+  color: white;
+  border-radius: 5px ;
+  border: none;
+  background-color: rgb(252, 121, 70);
+  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.521), inset -10px -0 10px rgba(252, 121, 70, 0.521);
+ }
+ #trans:active{
+  border: 5px inset lightsalmon;
+ }
+ #direction{
+  width: 90%;
+  height: 30px;
+  margin: 5px 5%;
+  outline: none;
+  cursor:pointer;
+ }
+ #outputarea{
+  font-family: 'Dancing Script', cursive;
+ }
+ #trans-heading{
+ text-align: center;
+ }
+ @media (min-width:500px) {
+  .container-DIV{
+    width: 90%;
+    height: 800px;
+   min-width: 600px;
+   margin: 40px auto;
+  }
+  #inputarea, #outputarea{
+    height: 280px;
+  }
+  .translator-container{
+    margin-top: 20px;
+  }
+ }
+ @media (min-width:600px){
+  .container-DIV{
+    width: 90%;
+    height: 900px;
+    min-width: 700px;
+    margin: 40px auto;
+  }
+ }
+ @media (min-width:700px){
+  .container-DIV{
+    width: 700px;
+    height: 600px;
+    min-width: 800px;
+    margin: 40px auto;
+  }
+  .container-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .container-box h2{
+    width: 100%;
+    text-align: center;
+  }
+
+  .trans-area{
+    width: 48%;
+  }
+
+  #inputarea, #outputarea{
+    width: 95%;
+    height: 300px;
+    margin: 10px 2%;
+  }
+
+  
+  #trans{
+    width: 100%;
+    order: 3;         
+    margin-top: 20px;
+  }
+  #direction{
+    height: 50px;
+    font-size: 30px;
+  }
+
+}
+
+@media (min-width:800px) {
+  .container-DIV{
+    width: 800px;
+    min-width: 900px;
+    height: 600px;
+  }
+  #inputarea, #outputarea{
+    width: 95%;
+    height: 350px;
+    margin: 10px 2%;
+    font-size: 20px;
+  }
+
+}
+@media (min-width:900px) {
+  .container-DIV{
+    width: 900px;
+    min-width: 1000px;
+   
+  }
+}
+
+/*ENGLISH TO HINDI CONVERTOR CODE FINISH AND RESPONSISE DESIGN FINISH*/
+
+/*VOICE ASSISTANT CODE START AND RESPONSIVE DESIGN START*/
+
+.assistant{
+  width: 350px;
+  max-width: 500px;
+  height: 250px;
+  border:none;
+  text-align: center;
+  margin: 400px auto;
+  box-shadow: 0 0 20px green;
+  background-color: rgb(91, 255, 145);
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.box button{
+  width:80%;
+  height: 50px;
+  margin: 60px 10%;
+  color: white;
+  border-radius: 10px;
+  box-shadow:inset 10px 10px 10px rgba(0, 0, 0, 0.555), inset -10px -10px 10px  rgb(253, 180, 84);
+  border: none;
+  background-color: rgb(253, 180, 84);
+}
+
+#cam{
+  
+  width: 360px;
+  max-width: 500px;
+}
+/*VOICE ASSISTANT CODE END OR RESPONSIVE DESIGN END*/
+
+/*TEXT TO QR CODE MAKER CODE START AND RESPONSIVE  DEISGN START*/
+#qrcode-box{
+  margin: 500px auto;
+  width: 95%;
+  height: 630px;
+  max-width: 500px;
+  border-radius: 5px;
+  background-color: rgb(238, 171, 71);
+}
+#qrcode-box h2{
+  text-align: center;
+}
+#qrarea{
+  width: 90%;
+  height: 250px;
+  margin: 10px 5%;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  
+}
+#qrBox{
+  margin-top: 40px;
+  display: inline-block;
+  border: 5px solid green;
+}
+.main-qr{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#share, #download, #maker{
+  gap: 40px;
+  width: 30%;
+  height: 35px;
+  margin: 10px auto;
+  color:white;
+  border-width: 5px;
+  border-radius: 5px;
+  border-style: outset;
+}
+#share{
+  border-color: red;
+  background-color: red;
+}
+#download{
+  border-color: rgb(2, 112, 66);
+  background-color:rgb(2, 112, 66);
+}
+#maker{
+  border-color: rgb(98, 0, 128);
+  background-color:rgb(98, 0, 128);
+}
+#share:active, #download:focus, #maker:focus{
+  border-style: inset;
+}
+@media(min-width:500px){
+  #qrcode-box{
+    width: 500px;
+    min-width: 600px;
+  }
+}
+@media(min-width:600px){
+  #qrcode-box{
+    width: 600px;
+    min-width: 700px;
+  }
+}
+@media(min-width:700px){
+  #qrcode-box{
+    width: 700px;
+    min-width: 800px;
+  }
+}
+@media (min-width:800px) {
+  #qrcode-box{
+    width: 800px;
+    min-width: 900px;
+  }
+}
+@media (min-width:900px) {
+  #qrcode-box{
+    width: 8900px;
+    min-width: 1000px;
+  }
+}
+@media (min-width:1000px) {
+  #qrcode-box{
+    width: 1000px;
+    min-width: 1200px;
+  }
+}
+/*QR CODE END*/
+
+/*MAIN RESPONSIVE DESIGN START*/
+
+/*MAIN RESPONSIVE DESIGN END*/
+
+/*footer layout start*/
+footer{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top:5px solid rgb(50, 50, 116) ;
+  background-color: rgb(22, 22, 36);
+  color: white;
+}
+#footer-info{
+  font-size: 20px;
+}
+#developer-name{
+  text-align: right;
+  
+}
+.powered-name{
+  text-align: start;
+}
+
+
+/*DAY NIGHT FEATURE*/
+/* ================= DARK MODE ================= */
+
+body.dark{
+  background:#121212;
+  color:#ffffff;
+}
+
+/* Header */
+body.dark .site-header{
+  background:#000;
+}
+
+/* All main boxes dark */
+body.dark #tool-wrapper,
+body.dark #unicode-box,
+body.dark .container-DIV,
+body.dark .assistant,
+body.dark #qrcode-box{
+  background:#1e1e1e !important;
+  color:#ffffff;
+  border-color:#444;
+}
+
+/* Textareas */
+body.dark textarea{
+  background:#2a2a2a;
+  color:#ffffff;
+  border:1px solid #555;
+}
+
+/* Buttons */
+body.dark button,
+body.dark #selectBtn,
+body.dark #downloadBtn,
+body.dark #maker,
+body.dark #share{
+  filter:brightness(0.9);
+}
+
+/* Side Menu */
+body.dark #sideMenu{
+  background:#000;
+}
+
+/* Footer */
+body.dark #footer-part{
+  background:#000;
+  color:#fff;
+}
+#awesome-btn{
+  width: 130px;
+  height: 50px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  background-color: rgb(5, 5, 31);
+}
+#one + #two{
+  margin: 0 10px;
+}
+
+#cookieNotice {
+  margin-top: 10px;
+}
+
+#cookieNotice button {
+  background: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Scrollbar ka background */
+::-webkit-scrollbar-track {
+  background: #ffffff;   /* yahan bg color */
+}
+
+/* Scrollbar ka moving part */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(orange, red,  orange);   /* thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:linear-gradient(purple, indigo, purple);
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+    <title>Contact Page</title>
+</head>
+<body>
+    <style>
+        *{
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #back{
+            color: green;
+            font-size: 20px;
+        }
+        #contact{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      #images-div{
+        font-size: 30px;  
+           
+      }
+      #images-div i{
+        display: block;
+        color: black !important;
+        
+      }
+      
+      .main{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        color:black;
+      }
+      .camera{
+        width: 50%;
+        padding: 15px 0;
+        margin-top: 30px;
+        margin: 20px auto;
+        border-radius: 30px;
+       text-align: center;
+       background-color: black;
+      }
+      .main-camera{
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        margin: 2px 5px;
+        border: 1px solid white;
+        background-color: white;
+      }
+      .phone{
+        width: 360px;
+        height: 660px;
+        border-radius: 70px;
+        border: 10px solid black;
+      }
+     
+      .footer{
+        height: 135px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom-right-radius: 45px;
+        border-bottom-left-radius: 45px;
+        background-color: black;
+      }
+      .footer a{
+        bottom: 0;
+        color: white;
+        font-size: 60px;
+        margin-top: -100px;
+        
+        margin-top: -50px;
+        position: relative;
+      }
+       
+   
+    </style>
+    
+    <div class="back">
+        <a id="back" href="index.html"><span id="back-page"  style="font-size: 70px;"></span> <i class="fa fa-window-close" aria-hidden="true"></i> Back To Home Page</a>
+       
+    </div>
+
+    <div id="contact" >
+        
+      <div class="phone">
+       
+        <div class="camera">
+          <div class="main-camera"></div>
+        </div>
+        <div class="main-area">
+
+          <div id="images-div">
+            <a id="youtube" href="https://youtube.com/@codewithpratyaksh?si=el-J9n7U0HLc9ePV" target="_blank"><span class="main">Youtube</span>
+              <i  class="fa-brands fa-youtube"></i>
+            </a>
+          
+            <a id="instagram" href="https://www.instagram.com/shivaniprajapati6158?igsh=MXRsdnRib3V5bnJodw==&amp;utm_source=ig_contact_invite" target="_blank"><span class="main">Instagram</span>
+              <i  class="fa-brands fa-instagram" ></i>
+            </a>
+          
+            <a id="telegram" href="https://t.me/Aarambh_daksh7676" target="_blank"><span class="main">Telegram</span>
+              <i  class="fa-brands fa-telegram" ></i>
+          
+            </a>
+            <a id="contact-mob" href="tel:+919557078800"><span class="main">Mobile no.</span>
+              <i  class="fa-solid fa-phone ringing"></i>
+            </a>
+          <a id="whatsapp-mob" href="https://wa.me/9557078800" target="_blank"><span class="main">Whatsapp</span>
+            <i  class="fa-brands fa-whatsapp" ></i>
+          </a>
+          
+          <a href="mailto:aarambhdaksh713@gmail.com"><span class="main" >Email</span>
+           
+            <i class="fa fa-envelope"  ></i>
+          </a>
+           </div>
+        </div>
+
+        <div class="footer">
+        <a href="index.html">o</a>
+        </div>
+      </div>
+    
+    </div>
+
+    
+    <script>
+        //SERVICE WORKER CODE INSTALL KARNE WALA//
+        if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("service-worker.js");
+            }
+        
+        </script>
+</body>
+</html>

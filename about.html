@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+    <script src="about.js"></script>
+    <title>my about page</title>
+
+    <style>
+        *{
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #backhome{
+           
+           font-size: 20px;
+        }
+        #backhome a{
+            color: green;
+        }
+      body{
+          background: linear-gradient(rgb(255, 104, 104), rgb(230, 169, 56), rgb(190, 134, 29)) ;
+      }
+      #codeyogi{
+          display: block;
+          text-align: center;    
+          font-size: 25px;
+         
+          
+         }
+         #codeyogi-logo{
+             width: 40px;
+         }
+        img{
+            width: 100px;
+           height: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-to-home" id="backhome">
+        <a href="index.html" onclick="backToHome()"><span id="back-page"  style="font-size: 70px;">⬅</span>
+        Back To Home Page</a>
+    </div>
+   
+
+    <div id="about">
+           
+       <div class="about-div">
+           <img src="icons/aarambhdaksh.png" alt="my image ">
+        <h4 id="my-about">मेरा नाम आरंभ दक्ष है। मैं 12 साल का हूँ और मैं मुज़फ्फरनगर के गाँव शेरनगर में रहता हूँ। मैं लाला जगदीश प्रसाद सरस्वती विद्या मंदिर इंटर कॉलेज में पढ़ता हूँ।
+            मैं पिछले एक साल से CodeYogi के साथ कोडिंग सीख रहा हूँ। शुरुआत में मुझे कोडिंग के बारे में बिल्कुल भी जानकारी नहीं थी, लेकिन CodeYogi की वजह से मुझे सीखने का मौका मिला।</h4>
+       </div>
+
+          <div id="coding-journey">
+            
+          <h1 id="coding">MY CODING JOURNEY</h1>
+          <h4 id="journey">
+           मेरे स्कूल के एक ग्रुप में CodeYogi का लिंक आया था। मैंने Telegram इंस्टॉल किया और वहीं से सीखना शुरू किया।
+           CodeYogi ने मुझे बिल्कुल फ्री में HTML, CSS, JavaScript, Tailwind CSS और React सिखाई है। मुझे न तो डायरेक्ट और न ही इनडायरेक्ट किसी भी तरह का कोई पैसा देना पड़ा। अभी मैं CodeYogi से एडवांस लेवल की कोडिंग सीख रहा हूँ और अपने स्किल्स को लगातार बेहतर बना रहा हूँ।
+           मुझे वेबसाइट बनाना, नई टेक्नोलॉजी सीखना और अपने आइडियाज़ को कोड के ज़रिए सच करना बहुत पसंद है। मैंने CodeYogi के बारे में अपने दोस्तों को भी बताया, ताकि वे भी फ्री में कोडिंग सीख सकें। मेरा सपना एक अच्छा वेब डेवलपर बनना है।
+          <span id="codeyogi"> Thank You CodeYogi </span>
+          <img id="codeyogi-logo" src="icons/codeyogi-logo.svg" alt="codeyogi-logo">
+          </h4>
+          </div>
+      </div>
+
+      <script>
+
+function backToHome(){
+    let  backToHomePage = document.getElementById('backhome');
+    window.location.href ="index.html";
+  }
+
+        //SERVICE WORKER CODE INSTALL KARNE WALA//
+        if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("service-worker.js");
+            }
+        
+        </script>
+</body>
+</html>
