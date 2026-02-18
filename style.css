@@ -265,27 +265,23 @@
     width: 80%;
     
   }
- 
  }
- @media(max-width: 900px){
+ @media(min-width: 900px){
   #tool-wrapper{
     width: 900px;
+    max-width: 1000px;
   }
 }
-@media(min-width:950px){
-  #tool-wrapper{
-    width: 900px;
-  }
-}
+
  /*JPG TO PNG CODE FINISH WITH RESPONSIVE CODE FINISH*/
 
  /*UNICODE TO KURTI DEV CONVERTER CODE START*/
 #unicode-box{
   border: none;
   width: 95%;
-  height: 780px;
+  height: 800px;
   max-width: 500px;
-  margin: 50px auto;
+  margin: 100px auto;
   border-radius: 5px;
   background-color: rgb(55, 170, 55);
   box-shadow: 0 0 10px green;
@@ -414,8 +410,8 @@
    padding: 10px;
    max-width: 500px;
    width: 95%;
-   height: 500px;
-   margin: 40px auto;
+   height: 550px;
+   margin: 100px auto;
    border-radius: 10px;
    background-color: rgb(255, 122, 122);
    box-shadow: 0 0 10px rgb(255, 122, 122);
@@ -504,8 +500,6 @@
     height: 300px;
     margin: 10px 2%;
   }
-
-  
   #trans{
     width: 100%;
     order: 3;         
@@ -568,7 +562,6 @@
 }
 
 #cam{
-  
   width: 360px;
   max-width: 500px;
 }
