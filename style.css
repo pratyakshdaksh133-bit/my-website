@@ -182,6 +182,9 @@
     border:none;
     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(0, 128, 0, 0.521);
  }
+ #buttons-div{
+  width: 100%;
+ }
  #selectBtn, #downloadBtn{
      width: 100%;
      height: 50px;
