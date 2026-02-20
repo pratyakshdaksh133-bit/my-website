@@ -144,7 +144,7 @@
 
   /*JPG TO PNG CONVERTERT START*/
   #tool-wrapper{
-      max-width: 480px;
+      max-width: 480vw;
       width: 90vw;
       height: 540px;
       margin: 50px auto;
