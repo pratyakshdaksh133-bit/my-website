@@ -150,7 +150,7 @@
       margin: 50px auto;
       border: none;
       border-radius: 15px;
-      background:rgb(104, 60, 10);
+      background:rgb(255, 184, 102);
   }
   .container{
       display: flex;
@@ -199,13 +199,13 @@
  /*JPG TO PNG SIMPLE DESIGN FINISH*/
  /*JPG TO PNG RESPONSIVE DESIGN START*/
  @media (min-width:500px) {
+  #tool-wrapper{
+    min-width: 600vw;
+    width: 90vw;
+    margin:50px auto ;
+  }
    #hueRange{
      font-size: 20px;
-   }
-   #tool-wrapper{
-     min-width: 600px;
-     width: 500px;
-     margin:50px auto ;
    }
   #buttons-div{
     min-width: 90%;
