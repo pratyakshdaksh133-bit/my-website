@@ -145,7 +145,7 @@
   /*JPG TO PNG CONVERTERT START*/
   #tool-wrapper{
       max-width: 480px;
-      width: 95%;
+      width: 90vw;
       height: 540px;
       margin: 50px auto;
       border: none;
@@ -305,7 +305,7 @@
    margin: 0 2%;
    width: 95%;
    height: 300px;
-   overflow: scroll;
+   
    resize: none;
    outline: none;
  }
@@ -337,26 +337,31 @@
     width: 95%;
     margin: 0 5%;
   }
+ 
  }
  
  @media (min-width:600px) {
   #unicode-box{
     min-width: 700px;
     width:95%;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 
  }
  @media (min-width:700px) {
   #unicode-box{
-    margin: 0 auto;
+    margin: 50px auto;
     min-width: 800px;
     width: 700px;
     height: 500px;
+    
   }
   #data{
     width:99%;
     margin: 10px 1%;
+    
+  
+
   }
   #data textarea{
     width: 385px;
@@ -372,6 +377,16 @@
  #unicode-container h2{
   font-size: 30px;
  }
+ #kurti-btn{
+  width: 90%;
+  
+ }
+ #convert-to-kurti-btn{
+  width: 90%;
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.534), inset -10px -10px 10px red;
+  border: none;
+  margin: 10px 5%;
+}
  }
  @media (min-width:800px){
   #unicode-box{
@@ -402,6 +417,39 @@
     margin: 0 5%;
   }
  }
+ @media(min-width:1000px){
+  #unicode-box{
+    width: 1000px;
+   min-width: 1100px;
+    height: 700px;
+  }
+  #data{
+    width: 95%;
+    margin:0 auto;
+  }
+  #data textarea{
+    width: 500px;
+    
+    margin: 0 2%;
+    box-shadow: 0 0 10px black;
+  }
+ }
+ @media (min-width:1100px) {
+  #unicode-box{
+    width: 1100px;
+    min-width: 1200px;
+  }
+  #data{
+    width: 95%;
+    margin:0 auto;
+   
+  }
+  #data textarea{
+    width: 550px;
+   margin: 0 2%;
+   box-shadow: 0 0 10px black;
+  }
+ }
 
  /*UNICODE TO KURTIDEV CODE FINISH AND RESPONSIVE DESIGN FINISH*/
 
@@ -420,7 +468,7 @@
   width: 90%;
   height: 150px;
   margin: 10px 5%;
-  overflow: scroll;
+ 
   resize: none;
   outline: none;
  }
@@ -533,7 +581,28 @@
    
   }
 }
-
+@media (min-width:1000px) {
+  .container-DIV{
+    width: 1000px;
+    min-width: 1100px;
+  }
+  #inputarea, #outputarea{
+    width: 95%;
+    margin: 5px 2%;
+    gap: 0;
+  }
+}
+@media(min-width:1100px){
+  .container-DIV{
+    width: 1100px;
+    min-width: 1200px;
+  }
+  #inputarea, #outputarea{
+    width: 95%;
+    margin: 5px 2%;
+    gap: 0;
+  }
+}
 /*ENGLISH TO HINDI CONVERTOR CODE FINISH AND RESPONSISE DESIGN FINISH*/
 
 /*VOICE ASSISTANT CODE START AND RESPONSIVE DESIGN START*/
@@ -765,7 +834,7 @@ body.dark #footer-part{
 
 /* Scrollbar ka background */
 ::-webkit-scrollbar-track {
-  background: #ffffff;   /* yahan bg color */
+  background: #727272;   /* yahan bg color */
 }
 
 /* Scrollbar ka moving part */
