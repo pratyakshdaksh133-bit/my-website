@@ -200,7 +200,7 @@
  /*JPG TO PNG RESPONSIVE DESIGN START*/
  @media (min-width:500px) {
   #tool-wrapper{
-    min-width: 600vw;
+    max-width: 600vw;
     width: 90vw;
     margin:50px auto ;
   }
