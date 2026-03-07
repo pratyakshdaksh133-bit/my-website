@@ -108,7 +108,7 @@
   left:0;
 }
 #userName, #userEmail{
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 /* ===== RESPONSIVE ===== */
