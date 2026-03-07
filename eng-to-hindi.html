@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGLISH TO HINDI CONVERTOR</title>
+    <script src="script.js"></script>
+    <style>
+        /*HINDI TO ENGLISH CONVERTER AND RESPONSIVE DESIGN START*/
+.container-DIV{
+padding: 10px;
+max-width: 500px;
+width: 95%;
+height: 550px;
+margin: 100px auto;
+border-radius: 10px;
+background-color: rgb(255, 122, 122);
+box-shadow: 0 0 10px rgb(255, 122, 122);
+}
+#inputarea, #outputarea{
+width: 90%;
+height: 150px;
+margin: 10px 5%;
+
+resize: none;
+outline: none;
+}
+#trans{
+width: 95%;
+height: 50px;
+margin: 10px 2%;
+color: white;
+border-radius: 5px ;
+border: none;
+background-color: rgb(252, 121, 70);
+box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.521), inset -10px -0 10px rgba(252, 121, 70, 0.521);
+}
+#trans:active{
+border: 5px inset lightsalmon;
+}
+#direction{
+width: 90%;
+height: 30px;
+margin: 5px 5%;
+outline: none;
+cursor:pointer;
+}
+#outputarea{
+font-family: 'Dancing Script', cursive;
+}
+#trans-heading{
+text-align: center;
+}
+@media (min-width:500px) {
+.container-DIV{
+ width: 95%;
+ height: 800px;
+max-width: 600px;
+margin: 40px auto;
+}
+#inputarea, #outputarea{
+ height: 280px;
+ width: 90%;
+}
+
+}
+
+@media (min-width:600px) {
+.container-DIV{
+ width: 95%;
+ height: 800px;
+max-width: 700px;
+margin: 40px auto;
+}
+#inputarea, #outputarea{
+ height: 280px;
+ width: 90%;
+}
+
+}
+@media (min-width:700px) {
+.container-DIV{
+  width: 95%;
+  height: 600px;
+ max-width: 800px;
+ margin: 40px auto;
+}
+.trans-area{
+  width: 95%;
+}
+.trans-area textarea{
+  display: flex;
+  width: 50%;
+  gap: 0;
+  order: 5;
+}
+.translate-text-area{
+  display: flex;
+  flex-direction: row;
+}
+#trans{
+  margin-top: 70px;
+}
+}
+@media (min-width:800px) {
+.container-DIV{
+  width: 95%;
+  height: 600px;
+ max-width: 900px;
+ margin: 40px auto;
+}
+.trans-area{
+  width: 95%;
+}
+.trans-area textarea{
+  display: flex;
+  width: 50%;
+  gap: 0;
+  order: 5;
+}
+.translate-text-area{
+  display: flex;
+  flex-direction: row;
+}
+#trans{
+  margin-top: 70px;
+}
+}
+@media (min-width:900px) {
+.container-DIV{
+  width: 95%;
+  height: 600px;
+ max-width: 1000px;
+ margin: 40px auto;
+}
+.trans-area{
+  width: 95%;
+}
+.trans-area textarea{
+  display: flex;
+  width: 50%;
+  gap: 0;
+  order: 5;
+}
+.translate-text-area{
+  display: flex;
+  flex-direction: row;
+}
+#trans{
+  margin-top: 70px;
+}
+}
+@media (min-width:1100px) {
+.container-DIV{
+  width: 95%;
+  height: 600px;
+ max-width: 1200px;
+ margin: 40px auto;
+}
+.trans-area{
+  width: 95%;
+}
+.trans-area textarea{
+  display: flex;
+  width: 50%;
+  gap: 0;
+  order: 5;
+}
+.translate-text-area{
+  display: flex;
+  flex-direction: row;
+}
+#trans{
+  margin-top: 70px;
+}
+}
+@media (min-width:1200px) {
+.container-DIV{
+  width: 95%;
+  height: 600px;
+ max-width: 1400px;
+ margin: 40px auto;
+}
+.trans-area{
+  width: 95%;
+}
+#trans{
+  height: 70px;
+  font-size: 20px;
+}
+#direction{
+  height: 60px;
+  font-size: 20px;
+}
+.trans-area textarea{
+  font-size: 20px;
+  height: 800px;
+  display: flex;
+  width: 50%;
+  gap: 0;
+  order: 5;
+}
+.translate-text-area{
+  
+  display: flex;
+  flex-direction: row;
+}
+#trans{
+  margin-top: 70px;
+}
+}
+
+/*ENGLISH TO HINDI CONVERTOR CODE FINISH AND RESPONSISE DESIGN FINISH*/
+    </style>
+</head>
+<body>
+    <div>
+        <a href="index.html" style="color:green; font-size:25px"> ⬅ Back</a>
+    </div>
+    <!--ENGLISH TO HINDI TRANSLATOR CODE START-->
+  <div class="container-DIV">
+
+    <select id="direction">
+      <option value="hi-en">Hindi → English</option>
+     
+          <option value="en-hi">English → Hindi</option>
+          
+      </select>
+
+    <div class="container-box">
+
+      <h2 id="trans-heading">Hindi ↔ English Translator</h2>
+     
+      <div class="translate-text-area">
+        <div class="trans-area">
+          <textarea id="inputarea" placeholder="write text here"></textarea>
+        </div>
+        
+   
+         <div class="trans-area">
+           <textarea id="outputarea" readonly> output will come here...</textarea>
+         </div>
+      </div>
+     
+      <button id="trans" onclick="translateText()">Translate</button>
+    </div>
+  </div>
+  <!--ENGLISH TO HINDI TRANSLATOR CODE END-->
+</body>
+</html>

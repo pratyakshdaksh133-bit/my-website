@@ -72,8 +72,6 @@
         
         button{
             color: white;
-            background-color: green;
-            border: 5px outset green;
             border-radius:15px ;
             width: 87%;
             padding: 20px 0;
@@ -81,66 +79,74 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border: none;
+            box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(0, 128, 0, 0.521);
+            background-color: green;
         }
-      
+        #loader-div{
+          display: flex;
+      align-items: center;
+      justify-content: center;
+        }
+      .loader{
+      width: 50px;
+      height: 50px;
+      display: none;
+      border-radius: 50%;
+      animation: spin 3s  infinite;
+      border-top: 10px dotted black;
+      border: 10px dotted rgb(94, 94, 94);
+      }
+      @keyframes spin {
+        to{transform: rotate(0deg);}
+        from{transform: rotate(360deg);}
+      }
     </style>
 </head>
 <body>
-    <div class="user-info">
-        <h1>Welcome</h1>
-    </div>
-
-    <div class="main-box">
-
-        <i id="sign-in-icon" class="fa fa-user-circle" aria-hidden="true"></i>
-
-    <div class="login-box" id="loginwebpage">
-        
-        <div class="input-box">
-            
-               <label for="name">Name:</label>
-
-               <span class="user-icon"><i id="user" class="fa fa-user-circle" aria-hidden="true"></i></span>
-               <input id="name" type="text" placeholder="User Name"><br><br>
-
-            
-              
-            <label for="email">Email:</label>
-            <span class="user-icon"><i class="fa fa-envelope"></i></span>
-            <input id="email" type="email" placeholder="Email"><br><br>
-            <label for="passord">Password:</label>
-            <span class="user-icon"><i class="fa-solid fa-lock"></i></span>
-            <input id="password" type="password" placeholder="Password"><br>
-            <button onclick="saveUserData()">SIGN UP</button>
-          
-        </div>
-    </div>
-    </div>
-    <script>
-      
-function saveUserData() {
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const pass = document.getElementById('password').value.trim();
-
-  if (name === "" || email === "" || pass === "") {
-    alert("❌ Please sab fields fill karo");
-    return; 
+  <input type="text" id="name" placeholder="Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="file" id="img">
+  
+  <button onclick="signup()">Signup</button>
+  
+  <script>
+  function signup(){
+  
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  
+  let img = document.getElementById("img").files[0];
+  
+  let reader = new FileReader();
+  
+  reader.onload = function(){
+  
+  let user = {
+  name:name,
+  email:email,
+  img:reader.result
+  };
+  
+  localStorage.setItem("user", JSON.stringify(user));
+  
+  window.location.href="index.html";
+  
   }
+  
+  reader.readAsDataURL(img);
+  
+  }
+  //SERVICE WORKER CODE INSTALL KARNE WALA//
+ //if ("serviceWorker" in navigator) {
+        // navigator.serviceWorker.register("service-worker.js");
+      //}
+  </script>
 
-  const userData = { name, email, pass };
-  localStorage.setItem("userData", JSON.stringify(userData));
+ 
 
-  window.location.href = "index.html"; // ✅ sirf tab jab form filled ho
-
-
-}
-
- //SERVICE WORKER CODE INSTALL KARNE WALA//
- // if ("serviceWorker" in navigator) {
-       //    navigator.serviceWorker.register("service-worker.js");
-     //  }
-
-</script>   
+ 
 </body>
 </html>
+
+

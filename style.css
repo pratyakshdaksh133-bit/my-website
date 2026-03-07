@@ -11,7 +11,7 @@
 /* ===== HEADER ===== */
 .site-header{
   width:100% !important;
-  background:#111;
+  background:rgb(0, 0, 0);
   position:sticky;
   top:0;
   z-index:1000;
@@ -86,7 +86,7 @@
   top:0;
   left:-260px;
   width:260px;
-  height:100vh;
+  height:100%;
   background:#222;
   padding-top:80px;
   transition:0.4s;
@@ -106,6 +106,9 @@
 
 #sideMenu.active{
   left:0;
+}
+#userName, #userEmail{
+  color: black;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -139,607 +142,141 @@
   }
     
 
-
+@media (min-width:1200px) {
+  .menu a{
+    font-size: 15px;
+  }
+}
+@media (min-width:1400px) {
+  .menu a{
+    font-size: 15px;
+  }
+}
   /*main area with responsive design*/
 
-  /*JPG TO PNG CONVERTERT START*/
-  #tool-wrapper{
-      max-width: 480vw;
-      width: 90vw;
-      height: 540px;
-      margin: 50px auto;
-      border: none;
-      border-radius: 15px;
-      background:rgb(255, 184, 102);
-  }
-  .container{
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-  }
-  #dropArea{
-      width: 90%;
-      height: 250px;
-      overflow: hidden;
-      margin: 10px auto;
-      border: 2px groove black;
-      border-radius: 5px;
-      background: rgba(255, 255, 195, 0.664);
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.596), inset -10px -10px 10px rgba(255, 255, 255, 0.596);
-  }
- #selectBtn{
-     background: chocolate;
-     border: none;
-     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(210, 105, 30, 0.521);
- }
- #downloadBtn{
-    background: green;
-    border:none;
-    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(0, 128, 0, 0.521);
- }
- #buttons-div{
-  width: 100%;
- }
- #selectBtn, #downloadBtn{
-     width: 97%;
-     height: 50px;
-     margin: 15px auto;
-     text-align: center;
-     display: block;
-     color: white;
-     border-radius: 10px;
- }
-
- #tool-wrapper h2{
-     text-align: center;
- }
  
- /*JPG TO PNG SIMPLE DESIGN FINISH*/
- /*JPG TO PNG RESPONSIVE DESIGN START*/
- @media (max-width:500px) {
-  #tool-wrapper{
-    max-width: 600vw;
-    width: 90vw;
-    margin:50px auto ;
-  }
-   #hueRange{
-     font-size: 20px;
-   }
-  #buttons-div{
-    min-width: 90%;
-    margin: 20px 0;
-  }
- }
- @media (min-width:600px) {
-   #buttons-div #selectBtn, #downloadBtn{
-     width: 80%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-   }
-   #tool-wrapper{
-    width: 600px;
-    min-width: 700px;
-   }
- }
- @media (min-width:700px) {
-   #tool-wrapper{
-    margin: 50px auto;
-    width: 700px;
-    min-width: 800px;
-    height: 550px;
-   }
-   #dropArea{
-     height: 340px;
-   }
-   #selectBtn, #downloadBtn{
-    margin: 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   }
-   #buttons-div{
-    margin: 20px 0;
-    width: 80%;
-    gap: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   }
-   #hueRange{
-     width: 50%;
-   }
-   .container h2{
-     font-size: 35px;
-   }
- }
- @media (min-width:800px) {
-   #tool-wrapper{
-    width: 800px;
-     min-width: 900px;
-   }
-   
-   #buttons-div #selectBtn, #downloadBtn{
-    width: 80%;
-    
-  }
- }
- @media(min-width: 900px){
-  #tool-wrapper{
-    width: 900px;
-    max-width: 1000px;
-  }
-}
 
- /*JPG TO PNG CODE FINISH WITH RESPONSIVE CODE FINISH*/
-
- /*UNICODE TO KURTI DEV CONVERTER CODE START*/
-#unicode-box{
-  border: none;
-  width: 95%;
-  height: 800px;
-  max-width: 500px;
-  margin: 100px auto;
-  border-radius: 5px;
-  background-color: rgb(55, 170, 55);
-  box-shadow: 0 0 10px green;
-}
- #unicode-container{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
- }
- #uni-label, #kurti-label{
-   font-size: 30px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
- }
- #data{
-  width: 100%;
- }
-#input, #output{
-   margin: 0 2%;
-   width: 95%;
-   height: 300px;
-   
-   resize: none;
-   outline: none;
- }
- #input:focus, #output:focus{
-   background: rgb(253, 253, 195);
- }
- #unicode-container h2{
-   text-align: center;
-   border: 1px solid rgb(2, 2, 2);
-   display: block;
- }
- #convert-to-kurti-btn{
-   width: 340px;
-   height: 50px;
-   color: white;
-   background: red;
-   border-radius: 5px;
-   border: 5px outset red
- }
- @media (min-width:500px){
-  #unicode-box{
-    min-width: 600px;
-    width: 90%;
-    height: 800px;
-    margin: 0 auto;
-  }
  
-  #data{
-    width: 95%;
-    margin: 0 5%;
-  }
- 
- }
- 
- @media (min-width:600px) {
-  #unicode-box{
-    min-width: 700px;
-    width:95%;
-    margin: 50px auto;
-  }
-
- }
- @media (min-width:700px) {
-  #unicode-box{
-    margin: 50px auto;
-    min-width: 800px;
-    width: 700px;
-    height: 500px;
-    
-  }
-  #data{
-    width:99%;
-    margin: 10px 1%;
-    
-  
-
-  }
-  #data textarea{
-    width: 385px;
-  }
-  #data textarea + textarea{
-    gap: 20px;
-  }
- .main-data{
-  
-  display: inline-flex;
-  flex-direction: column;
- }
- #unicode-container h2{
-  font-size: 30px;
- }
- #kurti-btn{
-  width: 90%;
-  
- }
- #convert-to-kurti-btn{
-  width: 90%;
-  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.534), inset -10px -10px 10px red;
-  border: none;
-  margin: 10px 5%;
-}
- }
- @media (min-width:800px){
-  #unicode-box{
-    width: 800px;
-    min-width: 900px;
-  }
-  #data{
-    width: 100%;
-    
-  }
-  #data textarea{
-    width: 435px;
-    margin: 0 5px;
-  }
- }
- @media (min-width:900px){
-  #unicode-box{
-    width: 900px;
-    min-width: 1000px;
-    height: 600px;
-  }
-  #data{
-    width: 95%;
-  }
-  #data textarea{
-    width: 445px;
-    height: 400px;
-    margin: 0 5%;
-  }
- }
- @media(min-width:1000px){
-  #unicode-box{
-    width: 1000px;
-   min-width: 1100px;
-    height: 700px;
-  }
-  #data{
-    width: 95%;
-    margin:0 auto;
-  }
-  #data textarea{
-    width: 500px;
-    
-    margin: 0 2%;
-    box-shadow: 0 0 10px black;
-  }
- }
- @media (min-width:1100px) {
-  #unicode-box{
-    width: 1100px;
-    min-width: 1200px;
-  }
-  #data{
-    width: 95%;
-    margin:0 auto;
-   
-  }
-  #data textarea{
-    width: 550px;
-   margin: 0 2%;
-   box-shadow: 0 0 10px black;
-  }
- }
-
- /*UNICODE TO KURTIDEV CODE FINISH AND RESPONSIVE DESIGN FINISH*/
-
- /*HINDI TO ENGLISH CONVERTER AND RESPONSIVE DESIGN START*/
- .container-DIV{
-   padding: 10px;
-   max-width: 500px;
-   width: 95%;
-   height: 550px;
-   margin: 100px auto;
-   border-radius: 10px;
-   background-color: rgb(255, 122, 122);
-   box-shadow: 0 0 10px rgb(255, 122, 122);
- }
- #inputarea, #outputarea{
-  width: 90%;
-  height: 150px;
-  margin: 10px 5%;
- 
-  resize: none;
-  outline: none;
- }
- #trans{
-  width: 80%;
-  height: 50px;
-  margin: 10px 10%;
-  color: white;
-  border-radius: 5px ;
-  border: none;
-  background-color: rgb(252, 121, 70);
-  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.521), inset -10px -0 10px rgba(252, 121, 70, 0.521);
- }
- #trans:active{
-  border: 5px inset lightsalmon;
- }
- #direction{
-  width: 90%;
-  height: 30px;
-  margin: 5px 5%;
-  outline: none;
-  cursor:pointer;
- }
- #outputarea{
-  font-family: 'Dancing Script', cursive;
- }
- #trans-heading{
- text-align: center;
- }
- @media (min-width:500px) {
-  .container-DIV{
-    width: 90%;
-    height: 800px;
-   min-width: 600px;
-   margin: 40px auto;
-  }
-  #inputarea, #outputarea{
-    height: 280px;
-  }
-  .translator-container{
-    margin-top: 20px;
-  }
- }
- @media (min-width:600px){
-  .container-DIV{
-    width: 90%;
-    height: 900px;
-    min-width: 700px;
-    margin: 40px auto;
-  }
- }
- @media (min-width:700px){
-  .container-DIV{
-    width: 700px;
-    height: 600px;
-    min-width: 800px;
-    margin: 40px auto;
-  }
-  .container-box{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .container-box h2{
-    width: 100%;
-    text-align: center;
-  }
-
-  .trans-area{
-    width: 48%;
-  }
-
-  #inputarea, #outputarea{
-    width: 95%;
-    height: 300px;
-    margin: 10px 2%;
-  }
-  #trans{
-    width: 100%;
-    order: 3;         
-    margin-top: 20px;
-  }
-  #direction{
-    height: 50px;
-    font-size: 30px;
-  }
-
+/* ROBOT */
+.robot{
+  width:360px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:20px;
+  margin: 20px auto;
 }
 
-@media (min-width:800px) {
-  .container-DIV{
-    width: 800px;
-    min-width: 900px;
-    height: 600px;
-  }
-  #inputarea, #outputarea{
-    width: 95%;
-    height: 350px;
-    margin: 10px 2%;
-    font-size: 20px;
-  }
+/* HEAD */
+.robot-face{
+  width:260px;
+  height:180px;
+  border-radius:25px;
+  background:linear-gradient(145deg,#dfe9f3,#ffffff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:3px solid cyan;
+  box-shadow:0 0 25px cyan,inset 0 0 25px rgba(0,0,0,0.4);
+}
 
+/* EYES */
+.eye-div{
+  display:flex;
+  gap:60px;
 }
-@media (min-width:900px) {
-  .container-DIV{
-    width: 900px;
-    min-width: 1000px;
-   
-  }
-}
-@media (min-width:1000px) {
-  .container-DIV{
-    width: 1000px;
-    min-width: 1100px;
-  }
-  #inputarea, #outputarea{
-    width: 95%;
-    margin: 5px 2%;
-    gap: 0;
-  }
-}
-@media(min-width:1100px){
-  .container-DIV{
-    width: 1100px;
-    min-width: 1200px;
-  }
-  #inputarea, #outputarea{
-    width: 95%;
-    margin: 5px 2%;
-    gap: 0;
-  }
-}
-/*ENGLISH TO HINDI CONVERTOR CODE FINISH AND RESPONSISE DESIGN FINISH*/
 
-/*VOICE ASSISTANT CODE START AND RESPONSIVE DESIGN START*/
-
-.assistant{
-  width: 350px;
-  max-width: 500px;
-  height: 250px;
-  border:none;
-  text-align: center;
-  margin: 400px auto;
-  box-shadow: 0 0 20px green;
-  background-color: rgb(91, 255, 145);
-  border-top-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+.eye{
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  background:cyan;
+  box-shadow:0 0 15px cyan,0 0 30px cyan;
+  animation:blink 4s infinite;
 }
-.box button{
-  width:80%;
-  height: 50px;
-  margin: 60px 10%;
-  color: white;
-  border-radius: 10px;
-  box-shadow:inset 10px 10px 10px rgba(0, 0, 0, 0.555), inset -10px -10px 10px  rgb(253, 180, 84);
-  border: none;
-  background-color: rgb(253, 180, 84);
+
+@keyframes blink{
+  0%,95%,100%{transform:scaleY(1);}
+  97%{transform:scaleY(0.1);}
+}
+
+/* MOUTH */
+.mouth{
+  width:80px;
+  height:6px;
+  background:lime;
+  margin-top:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px lime;
+}
+
+/* NECK */
+.throth{
+  width:70px;
+  height:25px;
+  background:linear-gradient(#888,#444);
+  border-radius:10px;
+  margin:5px 0;
+}
+
+/* STOMACH */
+.stomach{
+  width:260px;
+  height:200px;
+  background:#020617;
+  border-radius:20px;
+  border:3px solid cyan;
+  box-shadow:0 0 25px cyan,inset 0 0 25px cyan;
+  margin-top:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
 
 #cam{
-  width: 360px;
-  max-width: 500px;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
 }
-/*VOICE ASSISTANT CODE END OR RESPONSIVE DESIGN END*/
 
-/*TEXT TO QR CODE MAKER CODE START AND RESPONSIVE  DEISGN START*/
-#qrcode-box{
-  margin: 500px auto;
-  width: 95%;
-  height: 630px;
-  max-width: 500px;
-  border-radius: 5px;
-  background-color: rgb(238, 171, 71);
+/* BOX */
+.box{
+  text-align:center;
+  margin-top:20px;
 }
-#qrcode-box h2{
-  text-align: center;
+
+#start-btn{
+  margin-top:10px;
+  padding:10px;
+  width:100%;
+  background:cyan;
+  border:none;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
 }
-#qrarea{
-  width: 90%;
-  height: 250px;
-  margin: 10px 5%;
-  resize: none;
-  overflow: hidden;
-  outline: none;
+
+#start-btn:active{
+  transform:scale(0.95);
+}
+
+
+
+
+
+
   
-}
-#qrBox{
-  margin-top: 40px;
-  display: inline-block;
-  border: 5px solid green;
-}
-.main-qr{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#share, #download, #maker{
-  gap: 40px;
-  width: 30%;
-  height: 35px;
-  margin: 10px auto;
-  color:white;
-  border-width: 5px;
-  border-radius: 5px;
-  border-style: outset;
-}
-#share{
-  border-color: red;
-  background-color: red;
-}
-#download{
-  border-color: rgb(2, 112, 66);
-  background-color:rgb(2, 112, 66);
-}
-#maker{
-  border-color: rgb(98, 0, 128);
-  background-color:rgb(98, 0, 128);
-}
-#share:active, #download:focus, #maker:focus{
-  border-style: inset;
-}
-@media(min-width:500px){
-  #qrcode-box{
-    width: 500px;
-    min-width: 600px;
-  }
-}
-@media(min-width:600px){
-  #qrcode-box{
-    width: 600px;
-    min-width: 700px;
-  }
-}
-@media(min-width:700px){
-  #qrcode-box{
-    width: 700px;
-    min-width: 800px;
-  }
-}
-@media (min-width:800px) {
-  #qrcode-box{
-    width: 800px;
-    min-width: 900px;
-  }
-}
-@media (min-width:900px) {
-  #qrcode-box{
-    width: 8900px;
-    min-width: 1000px;
-  }
-}
-@media (min-width:1000px) {
-  #qrcode-box{
-    width: 1000px;
-    min-width: 1200px;
-  }
-}
 
 /*QR CODE END*/
-
 /*MAIN RESPONSIVE DESIGN START*/
 
 /*MAIN RESPONSIVE DESIGN END*/
 
 /*footer layout start*/
 footer{
+  height: 200px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-top:5px solid rgb(50, 50, 116) ;
   background-color: rgb(22, 22, 36);

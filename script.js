@@ -195,7 +195,9 @@ function showCommands(){
 let qr;
 
 function makeQR(){
+
  let text = document.getElementById("qrarea").value;
+
  if(text.trim() === ""){
    alert("write some text");
    return;
@@ -208,10 +210,13 @@ function makeQR(){
    width: 200,
    height: 200
  });
+
 }
 
 function downloadQR(){
+
  let img = document.querySelector("#qrBox img");
+
  if(!img){
    alert("Pehle QR banao");
    return;
@@ -221,16 +226,20 @@ function downloadQR(){
  a.href = img.src;
  a.download = "qr-code.png";
  a.click();
+
 }
 
 async function shareQR(){
+
  let img = document.querySelector("#qrBox img");
+
  if(!img){
    alert("Pehle QR banao");
    return;
  }
 
  if(navigator.share){
+
    const res = await fetch(img.src);
    const blob = await res.blob();
    const file = new File([blob], "qr.png", {type:"image/png"});
@@ -240,9 +249,13 @@ async function shareQR(){
      title:"QR Code",
      text:"Mera QR Code"
    });
+
  }else{
+
    alert("Share supported nahi hai is browser mein");
+
  }
+
 }
 
 function aboutPage(){
