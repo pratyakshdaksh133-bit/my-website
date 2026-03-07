@@ -132,9 +132,7 @@
     .menu{
       display:none;
     }
-    #userName, #userEmail{
-      color: rgb(0, 0, 0);
-    }
+   
     .hamburger{
       display:block;
     }

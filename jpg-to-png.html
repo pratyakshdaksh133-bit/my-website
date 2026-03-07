@@ -4,18 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Document</title>
     <script src="script.js"></script>
     <style>
          /*JPG TO PNG CONVERTERT START*/
+         *{
+          margin: 0;
+          padding: 0;
+          text-decoration: none;
+         }
+         header{
+          background-color: black;
+          padding: 20px 0;
+         }
+         .header{
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+         }
+         a{
+          color: white;
+          cursor: pointer;
+         }
+         button{
+          cursor: pointer;
+          color:white;
+          border: none;
+          background-color: black;
+         }
  #tool-wrapper{
   max-width: 480vw;
-  width: 90vw;
-  height: 540px;
+  width: 100vw;
+  height: 350px;
   margin: 50px auto;
   border: none;
   border-radius: 15px;
-  background:rgb(255, 184, 102);
+  background-color: rgb(146, 213, 252);
 }
 .container{
   display: flex;
@@ -24,7 +50,7 @@
   justify-content: center;
 }
 #dropArea{
-  width: 90%;
+  width: 85%;
   height: 250px;
   overflow: hidden;
   margin: 10px auto;
@@ -35,29 +61,7 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  box-shadow: inset 20px 20px 10px rgba(0, 0, 0, 0.596), inset -20px -20px 10px rgba(255, 255, 255, 0.486);
-}
-#selectBtn{
- background: chocolate;
- border: none;
- box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(210, 105, 30, 0.521);
-}
-#downloadBtn{
-background: green;
-border:none;
-box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(0, 128, 0, 0.521);
-}
-#buttons-div{
-width: 100%;
-}
-#selectBtn, #downloadBtn{
- width: 97%;
- height: 50px;
- margin: 15px auto;
- text-align: center;
- display: block;
- color: white;
- border-radius: 10px;
+ 
 }
 
 #tool-wrapper h2{
@@ -68,53 +72,23 @@ width: 100%;
 /*JPG TO PNG RESPONSIVE DESIGN START*/
 @media (min-width:500px) {
 #tool-wrapper{
-max-width: 90%;
-width: 90vw;
+max-width: 600px;
+width: 100vw;
 margin:50px auto ;
 
 }
 #hueRange{
  font-size: 20px;
 }
-#buttons-div{
-min-width: 90%;
-margin: 20px 0;
-}
-}
-
-@media (min-width:600px) {
-#buttons-div #selectBtn, #downloadBtn{
- max-width: 700vw;
- width: 90vw;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-#buttons-div{
-min-width: 90%;
-margin: 20px 0;
-}
 }
 @media (min-width:700px) {
 #tool-wrapper{
-height: 600px;
+  height: 450px;
+width: 100%;
+max-width: 800px;
 }
 #dropArea{
- height: 340px;
-}
-#selectBtn, #downloadBtn{
-margin: 20px auto;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-#buttons-div{
-margin: 20px 0;
-width: 80%;
-gap: 40px;
-display: flex;
-align-items: center;
-justify-content: center;
+ height: 300px;
 }
 #hueRange{
  width: 50%;
@@ -124,10 +98,9 @@ justify-content: center;
 }
 }
 @media (min-width:800px) {
-
-#buttons-div #selectBtn, #downloadBtn{
-width: 80%;
-
+#tool-wrapper{
+  width: 100%;
+  max-width: 900px;
 }
 }
 
@@ -138,8 +111,14 @@ width: 80%;
 
     </style>
 </head>
-<div><a href="index.html" style="color:green; font-size:25px">⬅ Back</a></div>
 <body>
+  <header>
+    <div class="header">
+      <a href="index.html">⬅ Back</a>
+      <button id="selectBtn">UPLOAD IMAGE <i class="fa fa-cloud-upload" aria-hidden="true"></i></button>
+         <a id="downloadBtn" download="converted.png" >Download PNG <i class="fa fa-download" aria-hidden="true"></i></a>
+    </div>
+  </header>
     <div id="tool-wrapper">
         <div class="container">
          <h2>JPG / JPEG → PNG</h2>
@@ -152,15 +131,11 @@ width: 80%;
          
          <label>Change Color</label>
          <input type="range" id="hueRange" min="0" max="360">
-   
-           <div id="buttons-div">
-             
-         <button id="selectBtn">UPLOAD IMAGE <i class="fa fa-cloud-upload" aria-hidden="true"></i></button>
-         <a id="downloadBtn" download="converted.png" >Download PNG <i class="fa fa-download" aria-hidden="true"></i></a>
-           </div>
          </div>
       </div>
          <canvas id="canvas" hidden></canvas>
        <!--JPG TO PNG CONVERTOR CODE END-->
+      
+     
 </body>
 </html>
