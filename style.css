@@ -10,6 +10,7 @@
 /* ===== HEADER ===== */
 /* ===== HEADER ===== */
 .site-header{
+  padding: 0 30px;
   width:100% !important;
   background:rgb(0, 0, 0);
   position:sticky;
@@ -117,7 +118,9 @@
   .menu{
     display:none;
   }
-
+  #userName, #userEmail{
+    color: rgb(0, 0, 0);
+  }
   .hamburger{
     display:block;
   }
@@ -131,7 +134,9 @@
     .menu{
       display:none;
     }
-  
+    #userName, #userEmail{
+      color: rgb(0, 0, 0);
+    }
     .hamburger{
       display:block;
     }
