@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>WEBSITE/aarambh daksh</title>
     <meta name="description" content="website || aarambh daksh website">
-    <meta property="og:image" content="Aarambh Daksh Website">
-    <meta property="og:image" content="https://drive.google.com/file/d/1T7P6-z9ezisucMR9pBLUZS3rLEcfqiSb/view?usp=drivesdk">
+    <meta property="og:image" content="Aarambh Daksh|| Website">
+    <meta property="og:image" content="https://drive.google.com/file/d/1nFE3DPN1iM8Cc4WsBzxiE6Yzvt1-oZ5-/view?usp=drivesdk">
     <meta property="twitter:title" content="aarambh daksh||website">
-    <meta property="twitter:image" content="https://drive.google.com/file/d/1T7P6-z9ezisucMR9pBLUZS3rLEcfqiSb/view?usp=drivesdk">
+    <meta property="twitter:image" content="https://drive.google.com/file/d/1nFE3DPN1iM8Cc4WsBzxiE6Yzvt1-oZ5-/view?usp=drivesdk">
     <meta name="author" content="Aarambh daksh">
     <meta name="generator" content="visual studio code (vscode)">
     <!--manifest.json and service-worker.js code -->
@@ -24,7 +24,16 @@
   
       <h1 class="heading">WELCOME TO MY WEB</h1>
 
-     
+     <!-- desktop menu -->
+     <div class="menu-div">
+      <ul class="menu">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#contact" onclick="contactPage()">CONTACT ME</a></li>
+        <li><a href="#about" onclick="aboutPage()">ABOUT ME</a></li>
+        <li><a href="#login" onclick="loginPage()">SIGN UP</a></li>
+      
+      </ul>
+    </div>
   
       <div class="hamburger" onclick="hamburgerIcon()">
         <span></span>
@@ -32,17 +41,7 @@
         <span></span>
       </div>
   
-      <!-- desktop menu -->
-      <ul class="menu">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#contact" onclick="contactPage()">CONTACT ME</a></li>
-        <li><a href="#about" onclick="aboutPage()">ABOUT ME</a></li>
-        <li><a href="#login" onclick="loginPage()">LOGIN</a></li>
-       <li> <a href="qr.html">QR-GEN</a></li>
-        <li><a href="eng-to-hindi.html">ENG-HINDI</a></li>
-        <li><a href="jpg-to-png.html">JPG-PNG</a></li>
-        <li><a href="unicode.html">UNICODE-KURTI</a></li>
-      </ul>
+      
       
     </nav>
   
@@ -51,12 +50,12 @@
       <a href="#home">HOME</a>
       <a href="#contact" onclick="contactPage()">CONTACT ME</a>
       <a href="#about"onclick="aboutPage()">ABOUT ME</a>
-      <a href="#login" onclick="loginPage()">LOGIN</a>
+      <a href="#login" onclick="loginPage()">SIGN UP</a>
       <a href="qr.html">QR-GEN</a>
       <a href="eng-to-hindi.html">ENG-HINDI</a>
       <a href="jpg-to-png.html">JPG-PNG</a>
       <a href="unicode.html">UNICODE-KURTI</a>
-      
+      <a href="vocal.html">VOCAL-REMOVER</a>
     </aside>
   </header>
   
@@ -90,8 +89,13 @@
           <button onclick="listen()" id="start-btn">🎧 Start</button>
           <div id="text"></div>
       </div>
+      <!--=========top pr janne ke liye side bar-->
+      
     <h5 style="color: rgb(219, 28, 28); margin:5px">made by Aarambh daksh || copyright  2026 ||</h5>
     
+
+
+
     </div>
   </div>
  </article>
@@ -108,6 +112,12 @@
     <p id="footer-info" style="margin: 10px 0;">© 2026 || web all rights reserved</p>
     <p id="developer-name" style="margin: 10px 0; text-decoration:underline;">Developed and Designed by Aarambh Daksh </p>
     <p class="powered-name" style="margin: 10px 0;">Powered By-: Aarambh Daksh</p>
+  <div style="display: flex; align-items:center; justify-content:center">
+    <a href="index.html" style="color:green;">Privacy Policy Term||<span>Cookies POlicy</span></a>
+
+   
+  </a>
+  </div>
     <div id="cookieNotice">
       🍪 
       <button onclick="acceptCookies()">Accept</button>
@@ -121,10 +131,12 @@
  
 
   //SERVICE WORKER CODE INSTALL KARNE WALA//
- //if ("serviceWorker" in navigator) {
-         // navigator.serviceWorker.register("service-worker.js");
-     //}
-  
+ if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("service-worker.js");
+     }
+     setTimeout(function(){
+  alert('This Web Accept To Cookies   🍪')
+}, 5000)
   </script>
 <script src="script.js"></script>
 </body>

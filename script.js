@@ -1,53 +1,69 @@
-/* ================= JPG → PNG CONVERTER ================= */
+document.addEventListener("DOMContentLoaded", function(){
 
-const dropArea = document.getElementById("dropArea");
-const fileInput = document.getElementById("fileInput");
-const selectBtn = document.getElementById("selectBtn");
-const preview = document.getElementById("preview");
-const text = document.getElementById("text");
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-const downloadBtn = document.getElementById("downloadBtn");
-const hueRange = document.getElementById("hueRange");
-
-let img = new Image();
-
-selectBtn.onclick = () => fileInput.click();
-fileInput.onchange = () => load(fileInput.files[0]);
-
-dropArea.ondragover = e => { e.preventDefault(); };
-dropArea.ondrop = e => {
-  e.preventDefault();
-  load(e.dataTransfer.files[0]);
-};
-
-function load(file){
-  if(!file || !file.type.startsWith("image/")){
-    alert("Only JPG / JPEG allowed");
-    return;
-  }
-
-  const reader = new FileReader();
-  reader.onload = () => {
-    img.src = reader.result;
-    preview.src = reader.result;
-    preview.hidden = false;
-    text.style.display = "none";
+  const dropArea = document.getElementById("dropArea");
+  const fileInput = document.getElementById("fileInput");
+  const selectBtn = document.getElementById("selectBtn");
+  const preview = document.getElementById("preview");
+  const text = document.getElementById("text");
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  const downloadBtn = document.getElementById("downloadBtn");
+  const hueRange = document.getElementById("hueRange");
+  
+  let img = new Image();
+  
+  selectBtn.onclick = () => fileInput.click();
+  fileInput.onchange = () => load(fileInput.files[0]);
+  
+  dropArea.ondragover = e => { 
+   e.preventDefault(); 
   };
-  img.onload = draw;
-  reader.readAsDataURL(file);
-}
-
-function draw(){
-  canvas.width = img.width;
-  canvas.height = img.height;
-  ctx.filter = `hue-rotate(${hueRange.value}deg)`;
-  ctx.drawImage(img,0,0);
-  preview.style.filter = ctx.filter;
-  downloadBtn.href = canvas.toDataURL("image/png");
-}
-
-hueRange.oninput = draw;
+  
+  dropArea.ondrop = e => {
+   e.preventDefault();
+   load(e.dataTransfer.files[0]);
+  };
+  
+  function load(file){
+  
+   if(!file || !file.type.startsWith("image/")){
+     alert("Only JPG / JPEG allowed");
+     return;
+   }
+  
+   const reader = new FileReader();
+  
+   reader.onload = () => {
+     img.src = reader.result;
+     preview.src = reader.result;
+     preview.hidden = false;
+     text.style.display = "none";
+   };
+  
+   img.onload = draw;
+  
+   reader.readAsDataURL(file);
+  }
+  
+  function draw(){
+  
+   canvas.width = img.width;
+   canvas.height = img.height;
+  
+   ctx.clearRect(0,0,canvas.width,canvas.height);
+  
+   ctx.filter = `hue-rotate(${hueRange.value}deg)`;
+  
+   ctx.drawImage(img,0,0);
+  
+   preview.style.filter = ctx.filter;
+  
+   downloadBtn.href = canvas.toDataURL("image/png");
+  }
+  
+  hueRange.oninput = draw;
+  
+  });
 
 /* ================= UNICODE → KURTIDEV ================= */
 
@@ -257,6 +273,71 @@ async function shareQR(){
  }
 
 }
+//vocal remover code
+let audioContext = new AudioContext();
+let source;
+
+function loadAudio(file){
+  let url = URL.createObjectURL(file);
+  let audio = new Audio(url);
+  document.getElementById("audio").src = url;
+
+  source = audioContext.createMediaElementSource(audio);
+  return audio;
+}
+
+let fileInput = document.getElementById("file");
+let currentAudio;
+
+fileInput.addEventListener("change", function(){
+  currentAudio = loadAudio(this.files[0]);
+});
+
+function playOriginal(){
+  if(currentAudio){
+    currentAudio.currentTime = 0;
+    currentAudio.play();
+  }
+}
+
+function playNoVocal(){
+  if(!currentAudio) return;
+
+  let splitter = audioContext.createChannelSplitter(2);
+  let merger = audioContext.createChannelMerger(2);
+
+  source.connect(splitter);
+
+  let inverter = audioContext.createGain();
+  inverter.gain.value = -1;
+
+  splitter.connect(inverter, 1);
+  splitter.connect(merger, 0);
+  inverter.connect(merger, 0);
+
+  merger.connect(audioContext.destination);
+
+  currentAudio.currentTime = 0;
+  currentAudio.play();
+}
+
+// 🔴 Stop Function
+function stopAudio(){
+  if(currentAudio){
+    currentAudio.pause();      // stop playback
+    currentAudio.currentTime = 0; // reset to start
+  }
+}function downloadAudio() {
+  let audio = document.getElementById("audio");
+  if (!audio.src) return;
+
+  let a = document.createElement("a");
+  a.href = audio.src;
+  a.download = "my-audio.mp3"; // file naam change kar sakta hai
+  a.click();
+}
+
+
 
 function aboutPage(){
  let  myAbout = document.getElementById('about');
@@ -276,6 +357,7 @@ function aboutPage(){
   document.getElementById("sideMenu").classList.toggle("active");
   document.querySelector(".hamburger").classList.toggle("active");
 }
+
 
 
 

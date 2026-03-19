@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+    <script src="https://kit.fontawesome.com" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>ENGLISH TO HINDI CONVERTOR</title>
     <script src="script.js"></script>
     <style>
@@ -12,7 +16,7 @@
 padding: 10px;
 max-width: 500px;
 width: 95%;
-height: 550px;
+height: 620px;
 margin: 100px auto;
 border-radius: 10px;
 background-color: rgb(255, 122, 122);
@@ -35,9 +39,27 @@ border-radius: 5px ;
 border: none;
 background-color: rgb(252, 121, 70);
 box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.521), inset -10px -0 10px rgba(252, 121, 70, 0.521);
+transition-property: all;
 }
-#trans:active{
-border: 5px inset lightsalmon;
+#trans:focus{
+background-color:  rgb(255, 67, 67);
+transition-duration: 2s;
+}
+#text-copy{
+  width: 95%;
+  height: 50px;
+  margin: 5px 2%;
+  color: rgb(0, 0, 0);
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px red;
+  transition-property: all;
+}
+#text-copy:focus{
+  background-color: green;
+  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px green;
+  transition-duration: 2s;
 }
 #direction{
 width: 90%;
@@ -99,8 +121,12 @@ margin: 40px auto;
   display: flex;
   flex-direction: row;
 }
-#trans{
+#trans, #text-copy{
   margin-top: 70px;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
 }
 }
 @media (min-width:800px) {
@@ -178,7 +204,7 @@ margin: 40px auto;
 @media (min-width:1200px) {
 .container-DIV{
   width: 95%;
-  height: 600px;
+  height: 700px;
  max-width: 1400px;
  margin: 40px auto;
 }
@@ -243,9 +269,24 @@ margin: 40px auto;
          </div>
       </div>
      
+     <div class="buttons">
       <button id="trans" onclick="translateText()">Translate</button>
+      <button id="text-copy" style="color: white; font-size: 20px;"><i style="color: white; font-size: 20px;" class="fa fa-clone" aria-hidden="true"></i>COPY</button>
+     </div>
     </div>
   </div>
   <!--ENGLISH TO HINDI TRANSLATOR CODE END-->
+  <script>
+     if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("service-worker.js");
+     }
+
+     let button = document.getElementById('text-copy')
+     let area = document.getElementById("outputarea")
+     button.addEventListener("click", function(){
+      navigator.clipboard.writeText(area.value)
+      alert("text copied to clipboard")
+     })
+  </script>
 </body>
 </html>

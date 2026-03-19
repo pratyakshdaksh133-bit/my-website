@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
     <title>QR CODE GENERATOR</title>
     <script src="script.js"></script>
     <style>
@@ -15,7 +17,7 @@
          }
          header{
           background-color: black;
-         padding: 10px 0;
+         padding: 20px 0;
          }
        .qr-button-div{
         display: flex;
@@ -27,20 +29,42 @@
           background-color: black;
           display: inline-block;
         }
+        .generator{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #maker{
+          color: white;
+          background-color: purple;
+          padding: 20px 0;
+          width: 50%;
+          border-radius: 5px;
+          box-shadow: 0 0 10px red;
+        }
+        #qrBox{
+          border: 1px solid red;
+          box-shadow: 0 0 10px red;
+        }
  #qrcode-box{
+  
  margin: 20px auto;
-  width: 100%;
+  width: 80%;
   height: 630px;
   max-width: 500px;
   border-radius: 5px;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 #qrcode-box h2{
   text-align: center;
 }
 #qrarea{
   width: 50%;
-  height: 350px;
+  height: 50%;
   margin: 10px 5%;
   resize: none;
   overflow: hidden;
@@ -54,8 +78,8 @@
   animation-fill-mode: forwards;
 }
 @keyframes move {
-    to{width: 90%;}
-    from{width: 50%;}
+    to{width: 60%;}
+    from{width: 0%;}
   }
 .main-qr{
   display: flex;
@@ -82,10 +106,7 @@
     width: 95%;
     max-width: 800px;
   }
-  .qr-text-area{
-    margin: 10px auto;
-    width: 95%;
-  }
+  
 }
 @media(min-width:800px){
   #qrcode-box{
@@ -121,7 +142,7 @@
   <header>
     <div class="qr-button-div">
     <a href="index.html" style="font-size:20px; color:white">Back</a>
-      <button onclick="makeQR()" id="maker">Make QR</button>
+      
       <button onclick="downloadQR()" id="download">Download</button>
       <button onclick="shareQR()" id="share">Share</button>
     </div>
@@ -134,7 +155,9 @@
   
     <textarea id="qrarea" placeholder="Yahan kuch bhi likho..."></textarea>
     <br><br>
-
+    <div class="generator">
+      <button onclick="makeQR()" id="maker">Generate QR</button>
+    </div>
   
     <br><br>
   
@@ -146,6 +169,10 @@
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
   
   <!--QR CODE CODE MAKER CODE FINISH-->
-  
+  <script>
+     if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("service-worker.js");
+     }
+  </script>
 </body>
 </html>

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://kit.fontawesome.com" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="theme-color" content="#007bff">
     <title>UNICODE TO KURTIDEV</title>
     <script src="script.js"></script>
 </head>
@@ -54,18 +58,41 @@ display: block;
 }
 #kurti-btn{
 width:90%;
-
 margin: 0 auto;
+display: flex;
 }
 #convert-to-kurti-btn{
+  transition-property: all;
+  transition-duration: 2s;
 border: none;
-width: 80%;
+width: 50%;
 height: 50px;
-margin: 10px 10%;
+margin: 10px 5%;
 color: white;
 background: red;
 border-radius: 5px;
 box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.541), inset -10px -10px 10px rgba(255, 0, 0, 0.541);
+}
+#convert-to-kurti-btn:focus{
+  background-color: rgb(61, 51, 112);
+  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px rgb(61, 51, 112);
+}
+#copy-btn{
+  transition-duration: 2s;
+  transition-property: all;
+  font-size: 15px;
+  color: white;
+  width: 50%;
+  height: 50px;
+  margin: 10px 5%;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px green;
+}
+#copy-btn:focus{
+  background-color: rgb(255, 145, 0);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.541), inset -10px -10px 10px rgb(255, 145, 0);
 }
 @media (min-width:500px){
 #unicode-box{
@@ -118,7 +145,7 @@ font-size: 30px;
 width: 90%;
 }
 #convert-to-kurti-btn{
-width: 90%;
+width: 50%;
 border: none;
 margin: 10px 5%;
 }
@@ -283,14 +310,24 @@ box-shadow: 0 0 10px black;
         </form>
         <div id="kurti-btn">
           <br><button type="button" id="convert-to-kurti-btn" onclick="convert()">CONVERT <i class="fa fa-exchange" aria-hidden="true"></i></button>
-    
+          <br><button id="copy-btn"  style="color: white; font-size: 20px;"><i  style="color: white; font-size: 20px;" class="fa fa-clone" aria-hidden="true"></i>COPY</button>
         </div>
       </div>
      
     </div>
     
   </div>
-  
+  <script>
+     if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("service-worker.js");
+     }
+     let button = document.getElementById('copy-btn')
+     let copytext = document.getElementById('output')
+     button.addEventListener('click', function(){
+      navigator.clipboard.writeText(copytext.value)
+      alert("text copied to clipboard")
+     })
+  </script>
   
     <!--UNICODE TO KURTIDEV CODE END-->
 </body>

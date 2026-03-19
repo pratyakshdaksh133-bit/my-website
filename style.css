@@ -31,8 +31,9 @@
 }
 
 .heading{
-  font-size:22px;
+  font-size:15px;
   white-space:nowrap;
+  margin-left: -10px;
 }
 
 /* ===== DESKTOP MENU ===== */
@@ -54,6 +55,7 @@
 
 /* ===== HAMBURGER ===== */
 .hamburger{
+  margin-left:5px 10px;
   width:30px;
   cursor:pointer;
   display:none;
@@ -64,7 +66,8 @@
   display:block;
   height:3px;
   background:white;
-  margin:6px 0;
+  margin-left: 10px;
+  margin-top: 5px;
   transition:0.4s;
 }
 
@@ -99,6 +102,7 @@
   color:white;
   font-size:18px;
   text-decoration:none;
+  margin: -10px 0;
 }
 
 #sideMenu a:hover{
@@ -112,37 +116,30 @@
   color: rgb(255, 255, 255);
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-
-  .menu{
-    display:none;
-  }
-  
-  .hamburger{
-    display:block;
-  }
-
-}
-
-  
   /* ===== RESPONSIVE ===== */
-  @media (max-width:768px){
-  
-    .menu{
-      display:none;
+  @media (min-width:768px){
+    .menu-div  li{
+      display:inline-block;
+      margin: 0 5px;
     }
-   
+    .menu{
+      display:block;
+      
+    }
     .hamburger{
       display:block;
     }
-  
     .heading{
       font-size:18px;
     }
   }
-    
-
+  @media(max-width:768px){
+    .menu{
+      display:none;
+    }.hamburger{
+      display: block;
+    }
+  }
 @media (min-width:1200px) {
   .menu a{
     font-size: 15px;
@@ -299,6 +296,8 @@ footer{
 /* ================= DARK MODE ================= */
 
 body.dark{
+  transition-duration: 5s;
+  transition-property: background-color;
   background:#121212;
   color:#ffffff;
 }
@@ -341,10 +340,7 @@ body.dark #sideMenu{
 }
 
 /* Footer */
-body.dark #footer-part{
-  background:#000;
-  color:#fff;
-}
+
 #awesome-btn{
   width: 130px;
   height: 50px;

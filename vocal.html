@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="aarambh daksh">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Vocal remover</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body.dark{
+  transition-duration: 5s;
+  transition-property: background-color;
+  background:#121212;
+  color:#ffffff;
+}
+
+/* Header */
+body.dark .site-header{
+  background:#000;
+}
+
+
+
+header{
+background-color: black;
+padding: 20px;
+}
+header .buttons{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h1{
+    margin: 20px;
+}
+button{
+    margin:5px;
+    height: 50px;
+    width: 80px;
+    color: white;
+    background-color: black;
+    transition-property: all;
+    border: 1px solid rgb(34, 34, 34);
+}
+button:hover{
+    color: black;
+    width: 80px;
+    font-size: 15px;
+    border-radius: 20%;
+    transition-duration: 2s;
+    background-color: white;
+}
+a{
+    color: green;
+    margin-left: -10px;
+}
+.controler-box{
+    width: 320px;
+    max-width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 10px red;
+    background-color: rgb(39, 80, 39);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+input[type="file"]{
+    background-color: rgb(37, 211, 130);
+}
+audio{
+    width: 80%;
+    margin: 20px 10%;
+    
+}
+    </style>
+</head>
+<body id="body">
+    <header>
+      <div class="buttons">
+        <br><br>
+        <a href="index.html">BACK</a>
+        <button onclick="playOriginal()" id="original">Original ▶</button>
+        <button onclick="playNoVocal()" id="music">Music Only </button>
+        <button onclick="stopAudio()" id="stop">Stop</button>
+        <button onclick="downloadAudio()"><i class="fas fa-save"></i>Save</button>
+        <button onclick="dayNight()"><i  id="one" class="fa-solid fa-moon" id="moon"></i> <i id="two" class="fa-solid fa-sun" id="sun"></i></button>
+      </div>
+    </header>
+   <div class="container">
+    <h2>Song Upload karo 🎵</h2>
+
+    <div class="controler-box">
+     <div class="controler">
+         <input type="file" id="file" accept="audio/*">
+         <audio id="audio" controls></audio>
+     </div>
+   
+ </div>
+ <br><br>
+ <p style="color: rgb(0, 0, 0);"> <span style="font-size: 20px;">©️</span>2026 || made by aarambh daksh  
+ </p>
+   </div>
+<script>
+    function dayNight(){
+        document.body.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.body.classList.contains("dark")?"dark":"light");
+    }
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
