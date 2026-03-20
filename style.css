@@ -33,7 +33,8 @@
 .heading{
   font-size:15px;
   white-space:nowrap;
-  margin-left: -10px;
+  margin-right:20px ;
+  margin-left: 20px;
 }
 
 /* ===== DESKTOP MENU ===== */
@@ -122,6 +123,15 @@
       display:inline-block;
       margin: 0 5px;
     }
+    .menu-div .menu {
+      display: inline-block;
+    }
+    .site-header{
+      padding: 35px;
+    }
+    .hamburger span{
+      width: 25px;
+    }
     .menu{
       display:block;
       
@@ -150,6 +160,15 @@
     font-size: 15px;
   }
 }
+.text{
+  margin: 20px auto;
+  width: 320px ;
+}
+.text1, .text2, .text3, .text4, .text5, .text6{
+  margin: 20px 0;
+  border: 2px solid black;
+  box-shadow: 0 0 10px red;
+}
   /*main area with responsive design*/
 
  
@@ -157,7 +176,7 @@
  
 /* ROBOT */
 .robot{
-  width:360px;
+  width:320px;
   display:flex;
   flex-direction:column;
   align-items:center;

@@ -83,23 +83,23 @@
             box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(0, 128, 0, 0.521);
             background-color: green;
         }
-        #loader-div{
-          display: flex;
-      align-items: center;
-      justify-content: center;
+        #progressDiv{
+          display: none;
+          align-items: center;
+        justify-content: center;
+        display: flex;
+        margin: 10px auto;
         }
-      #loader{
-      width: 50px;
-      height: 50px;
-      display: none;
-      border-radius: 50%;
-      animation: spin 3s  infinite;
-      border: 10px solid rgb(168, 168, 168);
-      border-top: 10px solid rgb(0, 0, 0);
+      #progressbox{
+        background-color: black;
+        width: 50%;
+        height: 30px;
+       
       }
-      @keyframes spin {
-        to{transform: rotate(0deg);}
-        from{transform: rotate(360deg);}
+      #progressBar{
+        width: 0%;
+        height: 30px;
+        background-color: green;
       }
     </style>
 </head>
@@ -130,42 +130,72 @@
         <span class="user-icon"><i class="fa-solid fa-lock"></i></span>
         <input id="password" type="password" placeholder="Password"><br>
         <button onclick="saveUserData()">SIGN UP</button>
-        <div id="loader-div">
-        <div class="loader" id="loader"></div>
+        <div id="progressDiv">
+          
+        <div id="progressbox">
+          <div id="progressBar"></div>
+        </div><div id="percent">%</div>
         </div>
     </div>
 </div>
 
 </div>
 <script>
-  -
-function saveUserData() {
-const name = document.getElementById('name').value.trim();
-const email = document.getElementById('email').value.trim();
-const pass = document.getElementById('password').value.trim();
-let loader = document.getElementById('loader').style.display ="block";
-
-
-
-if (name === "" || email === "" || pass === "") {
-alert("❌ Please sab fields fill karo");
-return; 
-}
-
-const userData = { name, email, pass };
-localStorage.setItem("userData", JSON.stringify(userData));
-
-setTimeout(function(){
-
-window.location.href="index.html";
-}, 2000);
-
-
-}
-  //SERVICE WORKER CODE INSTALL KARNE WALA//
+  function saveUserData() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const pass = document.getElementById('password').value.trim();
+    
+    let loader = document.getElementById('progressDiv');
+    loader.style.display = "block";
+  
+    // validation
+    if (name === "" || email === "" || pass === "") {
+      alert("❌ Please sab fields fill karo");
+      loader.style.display = "none";
+      return; 
+    }
+  
+    // save data
+    const userData = { name, email, pass };
+    localStorage.setItem("userData", JSON.stringify(userData));
+  
+    // progress bar start
+    let x = 0;
+  
+    let load = setInterval(function () {
+      let bar = document.getElementById('progressBar');
+      let percent = document.getElementById('percent');
+  
+      if (!bar || !percent) {
+        clearInterval(load);
+        return;
+      }
+  
+      if (x >= 100) {
+        clearInterval(load);
+        percent.innerText = "Done ✅";
+  
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 500);
+      } else {
+        x++;
+        bar.style.width = x + "%";
+        percent.innerText = x + "%";
+      }
+  
+    }, 50);
+  }
+  
+  // ✅ SERVICE WORKER (correct place)
   if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("service-worker.js");
-     }
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker Registered"))
+        .catch(err => console.log("SW Error:", err));
+    });
+  }
   </script>
 
  

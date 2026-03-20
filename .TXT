@@ -1,5 +1,0 @@
- <li> <a href="qr.html">QR-GEN</a></li>
-        <li><a href="eng-to-hindi.html">ENG-HINDI</a></li>
-        <li><a href="jpg-to-png.html">JPG-PNG</a></li>
-        <li><a href="unicode.html">UNICODE-KURTI</a></li>
-        <li><a href="vocal.html">VOCAL-REMOVER</a></li>
