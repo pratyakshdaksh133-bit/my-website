@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Condition</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        header{
+            padding: 20px;
+            background-color: rgb(68, 211, 247);
+        }
+        a{
+         color: black;
+        }
+        a:hover{
+            color: red;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .container{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+        .one, .two, .three{
+            width: 320px;
+            max-width: 500px;
+            margin:20px 5px;
+        }@media (min-width:720px){
+         header a{
+            font-size: 25px;
+         }
+         h2{
+            font-size: 30px;
+         }
+         p{
+            font-size: 20px;
+         }
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <nav>
+        <ul>
+            <a href="privacy.html" target="_blank">Privacy </a>
+            <a href="terms.html" target="_blank">Terms</a>
+            <a href="cokies.html" target="_blank">Cookies</a>
+           </ul>
+       </nav>
+    </header>
+   <div class="container">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+
+   <div class="one">
+    <p><b>Q: Is my data secure?</b><br>
+        A: Your data is stored only in your browser using localStorage and is not sent to any server.</p>
+   </div>
+    
+    <div class="two">
+        <p><b>Q: Is this a real authentication system?</b><br>
+            A: No, this is a demo/educational login system.</p>
+    </div>
+    
+    <div class="three">
+        <p><b>Q: Can I use my real email and password?</b><br>
+            A: We strongly recommend not using real or sensitive information.</p>
+    </div>
+   </div>
+</body>
+</html>

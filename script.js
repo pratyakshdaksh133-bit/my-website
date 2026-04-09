@@ -167,7 +167,7 @@ function run(cmd){
 
   /* 🛒 SHOPPING (UPDATED LINKS) */
   if(cmd.includes("shopping karo 3")){
-    location.href="https://aarambhadaksh-web7.netlify.app"; return;
+    location.href="https://aarambhdaksh-web7.netlify.app"; return;
   }
   if(cmd.includes("shopping karo 2")){
     location.href="https://aarambh-web-project6.netlify.app"; return;
@@ -338,6 +338,41 @@ function stopAudio(){
 }
 
 
+//link opener code
+
+function openInBrowser() {
+  let link = document.getElementById("inputLink").value;
+  let newLink = "";
+
+  // Instagram fix
+  if (link.includes("instagram.com")) {
+    let clean = link.split("?")[0];
+    newLink = clean + "?utm_source=ig_web_copy_link";
+  }
+
+  // LinkedIn fix
+  else if (link.includes("linkedin.com")) {
+    newLink = link.split("?")[0];
+  }
+
+  // Telegram fix
+  else if (link.includes("t.me") || link.includes("telegram.me")) {
+    newLink = link.replace("telegram.me", "t.me");
+  }
+
+  // Deep links (important 🔥)
+  else if (link.startsWith("tg://")) {
+    let username = link.split("domain=")[1];
+    newLink = "https://t.me/" + username;
+  }
+
+  else {
+    newLink = "Unsupported link ❌";
+  }
+
+  // Open in browser
+  window.open(newLink, "_blank");
+}
 
 function aboutPage(){
  let  myAbout = document.getElementById('about');
@@ -345,10 +380,7 @@ function aboutPage(){
  window.location.href = "about.html";
  }
 
- function contactPage(){
-   let contact = document.getElementById('contact')
-   window.location.href = "contact.html"
- }
+
  function loginPage (){
    let login = document.getElementById('loginwebpage')
    window.location.href = "login.html"

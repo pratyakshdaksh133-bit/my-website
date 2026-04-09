@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>WEBSITE/aarambh daksh</title>
     <meta name="description" content="website || aarambh daksh website">
-    <meta property="og:image" content="Aarambh Daksh|| Website">
-    <meta property="og:image" content="https://drive.google.com/file/d/1nFE3DPN1iM8Cc4WsBzxiE6Yzvt1-oZ5-/view?usp=drivesdk">
-    <meta property="twitter:title" content="aarambh daksh||website">
-    <meta property="twitter:image" content="https://drive.google.com/file/d/1nFE3DPN1iM8Cc4WsBzxiE6Yzvt1-oZ5-/view?usp=drivesdk">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta property="og:update_time" content="2026-4-4T1:21:37Z">
     <meta name="author" content="Aarambh daksh">
+    <meta name="author-email" content="aarambhdakdh713@gmail.com">
     <meta name="generator" content="visual studio code (vscode)">
-    <!--manifest.json and service-worker.js code -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#007bff">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <meta property="twitter:title" content="aarambh daksh||website">
+    <meta property="og:title" content="Aarambh Daksh|| Website">
+    <meta property="og:image" content="https://website-aarambhdaksh.netlify.app/icons/logo.png">
+    <meta property="twitter:image" content="https://website-aarambhdaksh.netlify.app/icons/logo.png">
 </head>
 <body>
   <header class="site-header" style="width:100%">
@@ -28,7 +35,7 @@
      <div class="menu-div">
       <ul class="menu">
         <li><a href="#home">HOME</a></li>
-        <li><a href="#contact" onclick="contactPage()">CONTACT ME</a></li>
+        <li><a href="#contact" >CONTACT ME</a></li>
         <li><a href="#about" onclick="aboutPage()">ABOUT ME</a></li>
         <li><a href="#login" onclick="loginPage()">SIGN UP</a></li>
       
@@ -36,9 +43,9 @@
     </div>
   
       <div class="hamburger" onclick="hamburgerIcon()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
       </div>
   
       
@@ -48,14 +55,23 @@
     <!-- mobile side menu -->
     <aside id="sideMenu">
       <a href="#home">HOME</a>
-      <a href="#contact" onclick="contactPage()">CONTACT ME</a>
+      <a href="#contact">CONTACT ME</a>
       <a href="#about"onclick="aboutPage()">ABOUT ME</a>
       <a href="#login" onclick="loginPage()">SIGN UP</a>
-      <a href="qr.html">QR-GEN</a>
+      <a href="#qrcode-box">QR-GEN</a>
       <a href="eng-to-hindi.html">ENG-HINDI</a>
       <a href="jpg-to-png.html">JPG-PNG</a>
       <a href="unicode.html">UNICODE-KURTI</a>
       <a href="vocal.html">VOCAL-REMOVER</a>
+
+      
+      
+
+      <div id="userProfile" style="margin-top: 20px;">
+        <img id="userPhoto" src="" width="60px" height="60px" style="border-radius:50%">
+        <h3 id="userName" style="margin-top: 5px;"></h3>
+        <p id="userEmail" style="margin-top: 5px;"></p>
+      </div>
     </aside>
   </header>
   
@@ -91,25 +107,64 @@
       </div>
       <!--=========top pr janne ke liye side bar-->
       
-    <h5 style="color: rgb(219, 28, 28); margin:5px">made by Aarambh daksh || copyright  2026 ||</h5>
+    <h5 style="color: rgb(219, 28, 28); margin:5px">made by Aarambh daksh || copyright  2026</h5>
     
+<div id="home-page">
+  <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+</div>
 
+
+    
+   
+    <!--QR CODE MAKER START-->
+
+<div id="qrcode-box">
+  <h2>QR Code Maker</h2>
+
+  <textarea id="qrarea" placeholder="Yahan kuch bhi likho..."></textarea>
+  <br><br>
+  <div class="qr-btns">
+    <button onclick="makeQR()" id="maker">Generate QR</button>
+    <button onclick="downloadQR()" id="download">Download</button>
+    <button onclick="shareQR()" id="share">Share</button>
+  </div>
+
+  <br><br>
+
+  <div id="qrBox"></div>
+</div>
+
+</div>
+
+
+
+<div class="link-opener-div">
+  <input type="text" id="inputLink" placeholder="Paste link">
+<button onclick="openInBrowser()" id="LINK-BTN">Open Link</button>
+</div>
+<!-- QR Code Library -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 
       <div class="text">
         <div class="text1">
           
           <h3>
             JPG to PNG Converter
-      
-      On our website, you can easily convert JPG images into PNG format. This tool is fast and simple—just upload your image and download the converted PNG instantly. It helps maintain image quality and also supports transparency.
-           </h3>
+          </h3>
+      <div class="content">
+        <p>On our website, you can easily convert JPG images into PNG format. This tool is fast and simple—just upload your image and download the converted PNG instantly. It helps maintain image quality and also supports transparency.</p>
+      </div class="content">
+
         </div>
+
         <div class="text2">
           <h3>
             Unicode to Kruti Dev Converter
-  
-            This feature is very useful for Hindi typing. You can quickly convert Unicode text into Kruti Dev font. It is especially helpful for students, typists, and official/government work.
           </h3>
+          <div class="content">
+            <p>This feature is very useful for Hindi typing. You can quickly convert Unicode text into Kruti Dev font. It is especially helpful for students, typists, and official/government work.</p> 
+          </div>
+          
         </div>
 
        
@@ -117,25 +172,32 @@
   
   <h3>
     🎤 Voice Command System
-
-The website includes a voice control feature that allows you to open different apps or features using voice commands. This makes the user experience smarter and faster.
   </h3>
+<div class="content">
+  <p>website includes a voice control feature that allows you to open different apps or features using voice commands. This makes the user experience smarter and faster.</p> 
+</div>
+  
 </div>
 
 <div class="text5">
   <h3>
     English to Hindi Converter
-
-    With this feature, you can convert English text into Hindi. It is helpful for users who want to type in Hindi using an English keyboard.
   </h3>
+    <div class="content">
+      <p>With this feature, you can convert English text into Hindi. It is helpful for users who want to type in Hindi using an English keyboard.</p>
+    </div>
+ 
 
 </div>
        <div class="text6">
         <h3>
           QR Code Generator
-
-          You can generate QR codes for any text, link, or information. These QR codes can be easily scanned and shared for quick access.
         </h3>
+        <div class="content">  
+          <p> You can generate QR codes for any text, link, or information. These QR codes can be easily scanned and shared for quick access.</p>
+        </div>
+        
+        
        </div>
         
       </div>
@@ -153,22 +215,70 @@ The website includes a voice control feature that allows you to open different a
     </div>
   </div>
 
+  
   <div class="website-footer">
-    <p id="footer-info" style="margin: 10px 0;">© 2026 || web all rights reserved</p>
+    <p id="footer-info" style="margin: 10px 0;">© 2026 || Web All Rights Reserved</p>
+    <div class="user-trust">
+      <a href="privacy.html" target="_blank">Privacy Policy</a>
+      <a href="terms.html" target="_blank">Terms  Condition</a>
+      <a href="faq.html" target="_blank">FAQ Condition</a>
+      <a href="cokies.html" target="_blank">Cookies</a>
+    </div>
+
     <p id="developer-name" style="margin: 10px 0; text-decoration:underline;">Developed and Designed by Aarambh Daksh </p>
     <p class="powered-name" style="margin: 10px 0;">Powered By-: Aarambh Daksh</p>
-  <div style="display: flex; align-items:center; justify-content:center">
-    <a href="index.html" style="color:green;">Privacy Policy Term || <span>Cookies Policy</span></a>
-
-   
-  </a>
   </div>
+
+  
+
+
+
+  <div id="contact" >
+    <div id="images-div">
+       
+        <a id="youtube" href="https://youtube.com/@codewithpratyaksh?si=el-J9n7U0HLc9ePV" target="_blank">
+          <div class="icon">
+            <i  class="fa-brands fa-youtube" ></i>
+          </div>
+        </a>
+      
+        <a id="instagram" href="https://www.instagram.com/pratyaksh_daksh?igsh=bHkzNTRmeXVkcmo0" target="_blank">
+          <div class="icon">
+            <i  class="fa-brands fa-instagram" ></i>
+          </div>
+        </a>
+        
+       <a id="linkedin" href="https://www.linkedin.com/in/aarambh-daksh-0b7959388?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+       <div class="icon">
+        <i class="fa-brands fa-linkedin"></i>
+       </div>
+
+        <a id="telegram" href="https://t.me/Aarambh_daksh7676" target="_blank">
+          <div class="icon">
+            <i  class="fa-brands fa-telegram" ></i>
+          </div>
+      
+        </a>
+        <a id="contact-mob" href="tel:+919557078800"><span class="main">
+          <div class="icon">
+            <i  class="fa-solid fa-phone ringing"></i>
+          </div>
+        </a>
+      <a id="whatsapp-mob" href="https://wa.me/9557078800" target="_blank">
+        <div class="icon">
+          <i  class="fa-brands fa-whatsapp" ></i>
+        </div>
+      </a>
+    </div>
+</div>
+
+
+
+
     <div id="cookieNotice">
       🍪 
       <button onclick="acceptCookies()">Accept</button>
     </div>
-  </div>
-</div>
 </footer>
 
 
@@ -176,12 +286,34 @@ The website includes a voice control feature that allows you to open different a
  
 
   //SERVICE WORKER CODE INSTALL KARNE WALA//
- if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("service-worker.js");
-     }
+ //if ("serviceWorker" in navigator) {
+          //navigator.serviceWorker.register("service-worker.js");}
+
      setTimeout(function(){
   alert('This Web Accept To Cookies   🍪')
 }, 5000)
+
+function loadUserData() {
+  const data = JSON.parse(localStorage.getItem("userData"));
+
+  console.log(data); // check
+
+  if (data) {
+    document.getElementById("userName").innerText = data.name;
+    document.getElementById("userEmail").innerText = data.email;
+
+    if (data.photo) {
+      document.getElementById("userPhoto").src = data.photo;
+    } else {
+      document.getElementById("userPhoto").src = "https://via.placeholder.com/60";
+    }
+  }
+}
+
+// 👇 correct way
+window.addEventListener("load", loadUserData);
+
+
   </script>
 <script src="script.js"></script>
 </body>

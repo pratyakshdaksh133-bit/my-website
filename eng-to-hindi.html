@@ -8,15 +8,26 @@
     <meta name="theme-color" content="#007bff">
     <script src="https://kit.fontawesome.com" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <title>ENGLISH TO HINDI CONVERTOR</title>
     <script src="script.js"></script>
     <style>
         /*HINDI TO ENGLISH CONVERTER AND RESPONSIVE DESIGN START*/
+        *{
+          margin: 0;
+          padding: 0;
+          text-decoration: none;
+        }
+        :root{
+          font-family: Roboto Slab, popins, Tahoma;
+        }
 .container-DIV{
 padding: 10px;
 max-width: 500px;
 width: 95%;
-height: 620px;
+height: 690px;
 margin: 100px auto;
 border-radius: 10px;
 background-color: rgb(255, 122, 122);
@@ -24,48 +35,44 @@ box-shadow: 0 0 10px rgb(255, 122, 122);
 }
 #inputarea, #outputarea{
 width: 90%;
-height: 150px;
+height: 250px;
 margin: 10px 5%;
 
 resize: none;
 outline: none;
 }
-
-#trans{
-width: 95%;
-height: 50px;
-margin: 10px 2%;
-color: white;
-border-radius: 5px ;
-border: none;
-background-color: rgb(252, 121, 70);
-box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.521), inset -10px -0 10px rgba(252, 121, 70, 0.521);
-transition-property: all;
+.trans-area{
+  height: 300px;
 }
-#trans:focus{
-background-color:  rgb(255, 67, 67);
-transition-duration: 2s;
+header{
+  background-color: black;
+  padding: 20px 0;
+  position: sticky;
+  top:0;
 }
-#text-copy{
-  width: 95%;
-  height: 50px;
-  margin: 5px 2%;
-  color: rgb(0, 0, 0);
-  background-color: red;
+header button, a{
+  color: white;
+  background-color: black;
   border: none;
-  border-radius: 10px;
-  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px red;
   transition-property: all;
+  transition-duration: 5s;
 }
-#text-copy:focus{
-  background-color: green;
-  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px green;
-  transition-duration: 2s;
+header button:hover, a:hover{
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 #direction{
-width: 90%;
-height: 30px;
-margin: 5px 5%;
+width: 10%;
+height: 20px;
+margin: 5px 0;
 outline: none;
 cursor:pointer;
 }
@@ -105,27 +112,21 @@ margin: 40px auto;
 @media (min-width:700px) {
 .container-DIV{
   width: 95%;
-  height: 600px;
+  height: 580px;
  max-width: 800px;
  margin: 40px auto;
 }
 .trans-area{
   width: 95%;
+  height: 90%;
 }
-.trans-area textarea{
+.trans-area #inputarea, #outputarea{
   display: flex;
-  width: 50%;
+  width: 90%;
   gap: 0;
-  order: 5;
+  height:400px;
 }
 .translate-text-area{
-  display: flex;
-  flex-direction: row;
-}
-#trans, #text-copy{
-  margin-top: 70px;
-}
-.buttons{
   display: flex;
   flex-direction: row;
 }
@@ -150,9 +151,6 @@ margin: 40px auto;
   display: flex;
   flex-direction: row;
 }
-#trans{
-  margin-top: 70px;
-}
 }
 @media (min-width:900px) {
 .container-DIV{
@@ -173,9 +171,6 @@ margin: 40px auto;
 .translate-text-area{
   display: flex;
   flex-direction: row;
-}
-#trans{
-  margin-top: 70px;
 }
 }
 @media (min-width:1100px) {
@@ -198,9 +193,6 @@ margin: 40px auto;
   display: flex;
   flex-direction: row;
 }
-#trans{
-  margin-top: 70px;
-}
 }
 @media (min-width:1200px) {
 .container-DIV{
@@ -211,14 +203,6 @@ margin: 40px auto;
 }
 .trans-area{
   width: 95%;
-}
-#trans{
-  height: 70px;
-  font-size: 20px;
-}
-#direction{
-  height: 60px;
-  font-size: 20px;
 }
 .trans-area textarea{
   font-size: 20px;
@@ -232,9 +216,7 @@ margin: 40px auto;
   
   display: flex;
   flex-direction: row;
-}
-#trans{
-  margin-top: 70px;
+ margin-top: 70px;
 }
 }
 
@@ -242,18 +224,27 @@ margin: 40px auto;
     </style>
 </head>
 <body>
-    <div>
-       <marquee> <a href="index.html" style="color:green; font-size:25px"> ⬅ Back</a></marquee>
-    </div>
-    <!--ENGLISH TO HINDI TRANSLATOR CODE START-->
-  <div class="container-DIV">
-
+    
+      <header>
+        <a href="index.html"> ⬅ Back</a>
+        <div class="buttons">
+          <button id="trans" onclick="translateText()">Translate</button>
+    
+          <button onclick="speakText()" id="speaker"><i class="fa-solid fa-volume"></i>Speak</button>
+          <button id="text-copy">Copy</button>
+         </div>
+         
     <select id="direction">
       <option value="hi-en">Hindi → English</option>
      
           <option value="en-hi">English → Hindi</option>
           
       </select>
+      </header>
+    
+    <!--ENGLISH TO HINDI TRANSLATOR CODE START-->
+  <div class="container-DIV">
+
 
     <div class="container-box">
 
@@ -270,17 +261,14 @@ margin: 40px auto;
          </div>
       </div>
      
-     <div class="buttons">
-      <button id="trans" onclick="translateText()">Translate</button>
-      <button id="text-copy" style="color: white; font-size: 20px;"><i style="color: white; font-size: 20px;" class="fa fa-clone" aria-hidden="true"></i>COPY</button>
-     </div>
+     
     </div>
   </div>
   <!--ENGLISH TO HINDI TRANSLATOR CODE END-->
   <script>
-     if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("service-worker.js");
-     }
+     //if ("serviceWorker" in navigator) {
+          //navigator.serviceWorker.register("service-worker.js");
+     //}
 
      let button = document.getElementById('text-copy')
      let area = document.getElementById("outputarea")
@@ -288,6 +276,19 @@ margin: 40px auto;
       navigator.clipboard.writeText(area.value)
       alert("text copied to clipboard")
      })
+  function speakText() {
+    let text = document.getElementById("outputarea").value;
+
+    if(text === ""){
+      alert("Pehle kuch likho!");
+      return;
+    }
+
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "hi-IN"; // Hindi voice
+
+    window.speechSynthesis.speak(speech);
+  }
   </script>
 </body>
 </html>

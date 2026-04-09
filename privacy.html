@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policies</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        header{
+            padding: 20px;
+            background-color: rgb(68, 211, 247);
+        }
+        a{
+            color: rgb(0, 0, 0);
+        }a:hover{
+            color: red;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .container{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container div{
+            width: 320px;
+            max-width: 500px;
+        }
+        .one-div, .two-div, .three-div, .four-div{
+            margin-top: 50px;
+        }
+        @media(min-width:750px){
+            header a{
+                font-size: 25px;
+            }
+           div p{
+            font-size: 20px;
+           }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <a href="faq.html" target="_blank">FAQ</a>
+            <a href="terms.html" target="_blank">Terms</a>
+            <a href="cokies.html" target="_blank">Cookies</a>
+          </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Privacy Policy</h2>
+<div class="one-div">
+    <p id="one">
+        At Aarambh Daksh, we value your privacy. Our website may collect basic user information such as name, email address, and password through the login form.
+        </p>
+</div>
+
+<div class="two-div">
+    <p id="two">
+        This data is stored locally in your browser using localStorage and is not transmitted to any external server.
+        </p>
+</div>
+
+<div class="three-div">
+    <p id="three">
+        We do not share, sell, or distribute your personal information to any third parties.
+        </p>
+</div>
+
+<div class="four-div">
+    <p id="four">
+        Please note that this website is intended for educational and demonstration purposes only, and we recommend not using sensitive or real credentials.
+        </p>
+</div>
+    </div>
+</body>
+</html>

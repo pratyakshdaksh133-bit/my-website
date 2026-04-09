@@ -14,9 +14,9 @@
         padding: 0;
         text-decoration: none;
       }
-      .login-box{
+      .main-box{
         width: 100%;
-        height: 620px;
+        height: 670px;
         position: relative;   
         border-radius: 10px;
         display: flex;
@@ -24,11 +24,17 @@
         justify-content: center;
         background-color: rgba(33, 163, 83, 0.534);
       }
+      .login-box{
+        width: 360px;
+        border-radius: 5px;
+        border: 2px solid black;
+        background:linear-gradient( to top right, rgba(146, 255, 188, 0.767), rgba(153, 255, 187, 0.555), rgba(255, 255, 255, 0.459))
+      }
       #sign-in-icon{
         left: 50%;
       right: 50%;
       z-index: 20;
-      margin-top: -70px;
+      margin-top: -680px;
       margin-left: auto;
       margin-right: auto;
       font-size: 120px;
@@ -50,17 +56,20 @@
             justify-content: center;
             margin: 90px ;
         }
-        
+        input::placeholder{
+          color: blue;
+        }
         .input-box input{
+          margin: 0 auto;
            display: flex;
-           width: 340px;
+           width: 320px;
            padding:20px 0;
            margin: 10px;
            border-radius: 5px;
            border: 2px solid rgb(1, 1, 39);
            outline: none;
            text-decoration: none;
-          
+          color: blue;
           font-size: 20px;
           text-align: center;
         }
@@ -80,7 +89,7 @@
             align-items: center;
             justify-content: center;
             border: none;
-            box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.521), inset -10px -10px 10px rgba(0, 128, 0, 0.521);
+            box-shadow: inset 10px 10px 10px rgb(0, 0, 0), inset -10px -10px 10px rgb(0, 128, 0);
             background-color: green;
         }
         #progressDiv{
@@ -126,76 +135,76 @@
         <label for="email">Email:</label>
         <span class="user-icon"><i class="fa fa-envelope"></i></span>
         <input id="email" type="email" placeholder="Email"><br><br>
-        <label for="passord">Password:</label>
-        <span class="user-icon"><i class="fa-solid fa-lock"></i></span>
-        <input id="password" type="password" placeholder="Password"><br>
+
+        <label for="photo">Upload Photo:</label>
+<input type="file" id="photo" accept="image/*">
+
         <button onclick="saveUserData()">SIGN UP</button>
         <div id="progressDiv">
           
         <div id="progressbox">
           <div id="progressBar"></div>
-        </div><div id="percent">%</div>
+        </div>
+        <div id="percent">%</div>
         </div>
     </div>
 </div>
 
 </div>
 <script>
-  function saveUserData() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const pass = document.getElementById('password').value.trim();
-    
-    let loader = document.getElementById('progressDiv');
-    loader.style.display = "block";
-  
-    // validation
-    if (name === "" || email === "" || pass === "") {
-      alert("❌ Please sab fields fill karo");
-      loader.style.display = "none";
-      return; 
-    }
-  
-    // save data
-    const userData = { name, email, pass };
+ function saveUserData() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const photoInput = document.getElementById('photo');
+
+  let loader = document.getElementById('progressDiv');
+  loader.style.display = "block";
+
+  if (name === "" || email === "" ) {
+    alert("❌ Please sab fields fill karo");
+    loader.style.display = "none";
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function () {
+    const userData = {
+      name,
+      email,
+      pass,
+      photo: reader.result   // 👈 image base64
+    };
+
     localStorage.setItem("userData", JSON.stringify(userData));
-  
-    // progress bar start
+
+    // progress bar
     let x = 0;
-  
     let load = setInterval(function () {
       let bar = document.getElementById('progressBar');
       let percent = document.getElementById('percent');
-  
-      if (!bar || !percent) {
-        clearInterval(load);
-        return;
-      }
-  
+
       if (x >= 100) {
         clearInterval(load);
         percent.innerText = "Done ✅";
-  
+
         setTimeout(() => {
           window.location.href = "index.html";
-        }, 500);
+        }, 900);
       } else {
         x++;
         bar.style.width = x + "%";
         percent.innerText = x + "%";
       }
-  
-    }, 50);
+    }, 30);
+  };
+
+  if (photoInput.files[0]) {
+    reader.readAsDataURL(photoInput.files[0]);
+  } else {
+    reader.onload(); // without photo भी चले
   }
-  
-  // ✅ SERVICE WORKER (correct place)
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-      navigator.serviceWorker.register("service-worker.js")
-        .then(() => console.log("Service Worker Registered"))
-        .catch(err => console.log("SW Error:", err));
-    });
-  }
+}
   </script>
 
  

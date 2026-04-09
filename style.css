@@ -4,15 +4,21 @@
     text-decoration: none;
     box-sizing: border-box;
 }
-
-
+:root{
+  font-family:Roboto Slab, popins, Tahoma;
+  cursor: pointer;
+}
+html{
+  scroll-behavior: smooth;
+}
  /*HEADER LAYOUT*/
 /* ===== HEADER ===== */
 /* ===== HEADER ===== */
 .site-header{
   padding: 0 30px;
   width:100% !important;
-  background:rgb(0, 0, 0);
+  
+  background:black;
   position:sticky;
   top:0;
   z-index:1000;
@@ -57,21 +63,22 @@
 /* ===== HAMBURGER ===== */
 .hamburger{
   margin-left:5px 10px;
-  width:30px;
+  width:50px;
   cursor:pointer;
   display:none;
   transition:0.4s;
+
 }
 
 .hamburger span{
+  width: 20px;
   display:block;
   height:3px;
-  background:white;
-  margin-left: 10px;
+  background:rgb(255, 255, 255);
+  margin-left: 20px;
   margin-top: 5px;
   transition:0.4s;
 }
-
 /* ===== X ANIMATION ===== */
 .hamburger.active span:nth-child(1){
   transform:rotate(45deg) translate(5px,5px);
@@ -103,7 +110,7 @@
   color:white;
   font-size:18px;
   text-decoration:none;
-  margin: -10px 0;
+  margin: -20px 0;
 }
 
 #sideMenu a:hover{
@@ -160,19 +167,43 @@
     font-size: 15px;
   }
 }
-.text{
-  margin: 20px auto;
-  width: 320px ;
+.text .text1, .text2, .text3, .text4, .text5, .text6{
+  color:rgb(2, 2, 2);
+  background:rgb(15, 183, 212);
+box-shadow: inset 10px 10px 10px rgb(0, 0, 0), inset -10px -10px 10px rgba(11, 109, 124, 0.5);
+width: 300px;
+height: 170px;
+margin:10px 5px;
+gap: 50px;
+border-radius: 10px;
+
 }
-.text1, .text2, .text3, .text4, .text5, .text6{
-  margin: 20px 0;
-  border: 2px solid black;
-  box-shadow: 0 0 10px red;
+.text{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  justify-content: center;
+  align-items: center;
+}
+.text div:hover, .content:hover{
+  position: relative;
+  animation: move 5s 1;
+}
+@keyframes move {
+  to{transform: rotateY(0);}
+  from{transform: rotateY(180deg);}
+}
+.home{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
 }
   /*main area with responsive design*/
 
  
-
+/*MAIN RESPONSIVE DESIGN START*/
  
 /* ROBOT */
 .robot{
@@ -193,8 +224,8 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  border:3px solid cyan;
-  box-shadow:0 0 25px cyan,inset 0 0 25px rgba(0,0,0,0.4);
+  border:3px solid rgb(22, 22, 36);
+  box-shadow:0 0 25px  rgb(22, 22, 36),inset 0 0 25px rgba(0,0,0,0.4);
 }
 
 /* EYES */
@@ -207,8 +238,8 @@
   width:25px;
   height:25px;
   border-radius:50%;
-  background:cyan;
-  box-shadow:0 0 15px cyan,0 0 30px cyan;
+  background:rgb(255, 196, 0);
+  box-shadow:0 0 15px rgb(255, 153, 0),0 0 30px rgb(255, 153, 0);
   animation:blink 4s infinite;
 }
 
@@ -221,10 +252,10 @@
 .mouth{
   width:80px;
   height:6px;
-  background:lime;
+  background:rgb(255, 0, 0);
   margin-top:20px;
   border-radius:10px;
-  box-shadow:0 0 10px lime;
+  box-shadow:0 0 10px rgb(255, 0, 0);
 }
 
 /* NECK */
@@ -242,8 +273,8 @@
   height:200px;
   background:#020617;
   border-radius:20px;
-  border:3px solid cyan;
-  box-shadow:0 0 25px cyan,inset 0 0 25px cyan;
+  border:3px solid rgb(22, 22, 36);
+  box-shadow:0 0 25px rgb(22, 22, 36),inset  rgb(22, 22, 36) 0 25px  rgb(22, 22, 36);
   margin-top:10px;
   display:flex;
   align-items:center;
@@ -268,32 +299,175 @@
   margin-top:10px;
   padding:10px;
   width:100%;
-  background:cyan;
+  background:rgb(22, 22, 36);
   border:none;
   border-radius:10px;
   font-weight:bold;
   cursor:pointer;
+  color:white;
 }
 
 #start-btn:active{
   transform:scale(0.95);
 }
+#home-page{
+  position: fixed;
+  right: 0;
+  bottom:0;
+  background-color: grey;
+  width: 50px;
+  height:50px;
+  text-align: center;
+  border-radius: 5px;
+  border-top-left-radius: 10px;
+}
+#home-page::placeholder{
+  color: blue;
+}
+#home-page a{
+  color: rgb(255, 255, 255);
+}
+.qr-btns{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.qr-btns button{
+  width: 70%;
+  margin: 5px 5px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border:none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition-property: all;
+}
+
+.qr-btns button:hover{
+  transition-duration:2s ;
+  background-color: red;
+}
+#maker{
+  color: white;
+  background-color: purple;
+  box-shadow:inset 10px 10px 10px black, inset -10px -10px 10px purple;
+}
+#download{
+  color: black;
+  background-color: #33cc33;
+  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px #33cc33;
+}
+#share{
+  color: black;
+  background-color: rgb(250, 106, 39);
+  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px rgb(250, 106, 39);
+}
+#qrBox{
+  border: 1px solid red;
+  box-shadow: INSET 0 0 10PX red;
+}
+#qrcode-box{
+background: rgb(22, 22, 36);
+margin: 20px 0;
+width: 100%;
+height: 630px;
+max-width: 500px;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
 
 
+}
+#qrcode-box h2{
+text-align: center;
+}
+#qrarea{
+width: 80%;
+height: 50%;
+margin: 10px 5%;
+resize: none;
+overflow: hidden;
+outline: none;
+box-shadow: 0 0 10px black;
 
-
-
-
-  
+}
+.main-qr{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+@media (min-width:500px) {
+  #qrcode-box{
+    width:500px;
+    max-width:600px;
+  }
+}
+@media (min-width:600px) {
+  #qrcode-box{
+    width:600px;
+    max-width:700px;
+  }
+}@media (min-width:800px) {
+  #qrcode-box{
+    width:800px;
+    max-width:900px;
+  }
+  .qr-btns button{
+    padding: 20px 20px;
+  }
+}
 
 /*QR CODE END*/
-/*MAIN RESPONSIVE DESIGN START*/
+
+/*LINKS OPENER CODE START*/
+.link-opener-div{
+  width: 90%;
+  max-width: 500px;
+  height: 300px;
+  margin: 120px auto;
+  border-radius: 10px;
+  background: rgb(22, 22, 36);
+}
+input{
+  width:80%;
+  padding-top:40px;
+  display: flex;
+  border: 2px  solid black;
+  outline: none;
+  box-shadow: 0 0 10px black;
+  border-radius: 5px;
+}#LINK-BTN{
+  margin-top: 40px;
+  color: white;
+  background-color: red;
+  padding: 20px 70px;
+  border-radius: 5px;
+  border:none;
+  box-shadow: inset 10px 10px 10px black, inset -10px -10px 10px red;
+}
+#LINK-BTN:active{
+ padding: 14px 49px;
+}
+.link-opener-div{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* LINK CODE END*/
+
 
 /*MAIN RESPONSIVE DESIGN END*/
 
 /*footer layout start*/
 footer{
-  height: 200px;
+  height: 490px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-top:5px solid rgb(50, 50, 116) ;
   background-color: rgb(22, 22, 36);
@@ -301,6 +475,7 @@ footer{
 }
 #footer-info{
   font-size: 20px;
+  font-family:Tahoma, Geneva, Verdana, sans-serif, Arial, ;
 }
 #developer-name{
   text-align: right;
@@ -309,7 +484,52 @@ footer{
 .powered-name{
   text-align: start;
 }
-
+.user-trust{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.user-trust a{
+  color: green;
+  margin: 5px;
+  transition-property: font-size, width, background-color, border;
+  transition-duration: 5s;
+}
+.user-trust a:hover{
+  font-size: 20px;
+  border:2px solid red
+  }
+#images-div i{
+  color: rgb(56, 56, 105);
+  font-size: 20px;
+  margin: 5px;
+  transition-property: font-size, width, background-color, border;
+  transition-duration: 5s;
+}
+#images-div i:hover{
+   font-size: 25px;
+}
+@media (min-width:768px) {
+  footer{
+    height: 320px;
+  }
+  #images-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .user-trust {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media (min-width:900px){
+  #images-div i{
+    font-size: 25px;
+  }
+}
 
 /*DAY NIGHT FEATURE*/
 /* ================= DARK MODE ================= */
@@ -331,7 +551,8 @@ body.dark #tool-wrapper,
 body.dark #unicode-box,
 body.dark .container-DIV,
 body.dark .assistant,
-body.dark #qrcode-box{
+body.dark #qrcode-box,
+body.dark .link-opener-div{
   background:#1e1e1e !important;
   color:#ffffff;
   border-color:#444;
@@ -361,12 +582,14 @@ body.dark #sideMenu{
 /* Footer */
 
 #awesome-btn{
-  width: 130px;
-  height: 50px;
-  border-radius: 10px;
-  color: white;
+  padding: 20px 40px;
+  border-radius: 5px;
   border: none;
-  background-color: rgb(5, 5, 31);
+  color: white;
+  background-color: rgb(39, 39, 77);
+}
+.dayNight-box i{
+  color: rgb(255, 255, 255);
 }
 #one + #two{
   margin: 0 10px;
@@ -402,3 +625,4 @@ body.dark #sideMenu{
 ::-webkit-scrollbar-thumb:hover {
   background:linear-gradient(purple, indigo, purple);
 }
+
