@@ -318,14 +318,13 @@ border-radius: 10px;
   width: 50px;
   height:50px;
   text-align: center;
-  border-radius: 5px;
-  border-top-left-radius: 10px;
+  border-radius: 25px;
 }
 #home-page::placeholder{
   color: blue;
 }
 #home-page a{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .qr-btns{
   width: 90%;
@@ -467,22 +466,29 @@ input{
 
 /*footer layout start*/
 footer{
-  height: 490px;
+  height: 500px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-top:5px solid rgb(50, 50, 116) ;
   background-color: rgb(22, 22, 36);
   color: white;
 }
 #footer-info{
+  color: wheat;
   font-size: 20px;
-  font-family:Tahoma, Geneva, Verdana, sans-serif, Arial, ;
+  font-family:Roboto Slab, popins ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
 }
 #developer-name{
   text-align: right;
-  
+  color: wheat;
 }
 .powered-name{
   text-align: start;
+  color: wheat;
 }
 .user-trust{
   display: flex;
@@ -500,6 +506,9 @@ footer{
   font-size: 20px;
   border:2px solid red
   }
+  #images-div i + i{
+    margin: 10px 5px;
+  }
 #images-div i{
   color: rgb(56, 56, 105);
   font-size: 20px;
@@ -507,7 +516,7 @@ footer{
   transition-property: font-size, width, background-color, border;
   transition-duration: 5s;
 }
-#images-div i:hover{
+.icon i:hover, #images-div a:hover{
    font-size: 25px;
 }
 @media (min-width:768px) {
